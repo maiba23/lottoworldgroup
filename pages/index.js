@@ -3,12 +3,15 @@ import Link from "next/link";
 import Hero from "../components/common/hero";
 import Layout from "../components/layout";
 import LotteryList from "../components/common/lottery-list";
+import PlayGroup from "../components/home/play-group";
+import LottoResult from "../components/home/lotto-result";
 
 import { getAllDraws, getResultsByBrand } from "../service/globalinfo";
 import { parseXmlFile } from "../helpers/xml";
+import SecurityGroup from "../components/home/security-group";
 
 export default function Home(props) {
-  const { lotteries } = props;
+  const { lotteries, results } = props;
   return (
     <Layout>
       <Head>
@@ -17,8 +20,8 @@ export default function Home(props) {
       </Head>
 
       <main>
-        {/* banner */}
-        <Hero />
+        {/* hero */}
+        <Hero lottery={lotteries[0]} />
         <div className="clear"></div>
 
         {/* lottery list */}
@@ -36,6 +39,17 @@ export default function Home(props) {
           <div className="clear"></div>
         </section>
         <div className="clear" />
+
+        {/* middle home */}
+        <section id="middle_home">
+          <section className="wrap">
+            <div className="playgroup-result">
+              <PlayGroup />
+              <LottoResult items={results} />
+            </div>
+            <SecurityGroup />
+          </section>
+        </section>
       </main>
     </Layout>
   );
@@ -156,7 +170,7 @@ export const getStaticProps = async (ctx) => {
           name: item.LotteryName,
           image: item.LotteryName.includes("Raffle")
             ? null
-            : `/images/${item.LotteryName.toLowerCase()}1.png`,
+            : `/images/logos/${item.LotteryName.toLowerCase()}1.png`,
           country: item.CountryName,
           date: item.LocalDrawDateTime,
           earned: { unit: item.LotteryCurrency, amount: item.RollOver },

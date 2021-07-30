@@ -67,15 +67,12 @@
     var $items = this.$list.children();
 
     //generate extra markup
-
     this.$list
       .addClass("simply-scroll-list")
-      .wrap('<div className="simply-scroll-clip"></div>')
+      .wrap('<div class="simply-scroll-clip"></div>')
       .parent()
       .wrap(
-        '<div className="' +
-          this.o.customClass +
-          ' simply-scroll-container"></div>'
+        '<div class="' + this.o.customClass + ' simply-scroll-container"></div>'
       );
 
     if (!this.isAuto) {
@@ -83,15 +80,15 @@
       this.$list
         .parent()
         .parent()
-        .prepend('<div className="simply-scroll-forward"></div>')
-        .prepend('<div className="simply-scroll-back"></div>');
+        .prepend('<div class="simply-scroll-forward"></div>')
+        .prepend('<div class="simply-scroll-back"></div>');
     } else {
       if (this.o.pauseButton) {
         this.$list
           .parent()
           .parent()
           .prepend(
-            '<div className="simply-scroll-btn simply-scroll-btn-pause"></div>'
+            '<div class="simply-scroll-btn simply-scroll-btn-pause"></div>'
           );
         this.o.pauseOnHover = false;
       }

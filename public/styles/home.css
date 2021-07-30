@@ -617,20 +617,24 @@
   }
 }
 .l-stageTemplate-banner-ctaWrapper .btn {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 12px 61px 0;
-  background: #8bc53f;
+  font-size: 18px;
+  white-space: nowrap;
+  color: #fff;
+  padding: 10px;
+  background: #13d19c;
+  border-color: #13d19c;
+  border-radius: 5px;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
+  margin-right: 10px;
+  text-align: center;
+  min-width: 12rem;
+  font-weight: bold;
 }
 .l-stageTemplate-banner-ctaWrapper .btn:hover {
-  background: #0df90d;
+  background: #8bc53f;
+  border-color: #8bc53f;
 }
 /*************************/
 
@@ -784,11 +788,11 @@ margin-right: 4px;
   display: inline-block;
   cursor: pointer;
   height: 36px;
-  background-color: #8bc53f;
+  background-color: #13d19c;
   color: #fff;
   font-family: Arial, sans-serif;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 14px;
   text-decoration: none;
   text-align: center;
   text-shadow: 1px 1px 0 #8bc53f;
@@ -804,9 +808,10 @@ margin-right: 4px;
   background-size: 100%; /*background-image: linear-gradient(#c3dc41,#97bd00);*/
 }
 a.button.goOn:hover {
-  background: #0df90d;
+  background: #8bc53f;
   box-shadow: none;
   text-shadow: none;
+  transition: all ease-in-out 0.2s;
 }
 .all .button.arrow:after,
 .all button.arrow:after {
@@ -845,4 +850,30 @@ a.button.goOn:hover {
 .lotteryresultslist-new li.block .datenum {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
+}
+
+.lotto-results-section .more-result-link {
+  -webkit-box-shadow: 0 10px 16px rgb(19 209 156 / 16%),
+    0 4px 6px rgb(0 0 0 / 6%);
+  box-shadow: 0 10px 16px rgb(19 209 156 / 16%), 0 4px 6px rgb(0 0 0 / 6%);
+  border-radius: 5px;
+  font-family: Gilroy-bold;
+  font-size: 22px !important;
+  line-height: 26px !important;
+  color: #fff !important;
+  padding: 16px 0 !important;
+  width: 100% !important;
+  border: 0 !important;
+  text-align: center;
+  margin-top: 30px !important;
+  display: block;
+  background: #13d19c;
+}
+
+.playgroup-result h1 {
+  color: #0169b2;
+  padding: 10px 0 10px 0px;
+  margin-bottom: 10px;
+  font-size: 36px;
+  line-height: 36px;
 }
