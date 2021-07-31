@@ -1,10 +1,10 @@
-import * as ActionTypes from 'store/action-types';
+import * as ActionTypes from "../action-types";
 const initState = {
   profile: null,
   balance: null,
   transactions: [],
   tickets: [],
-  products: []
+  products: [],
 };
 
 const userReducer = (state = initState, action) => {
@@ -14,7 +14,7 @@ const userReducer = (state = initState, action) => {
     case ActionTypes.USER_PROFILE_SET:
       return { ...state, profile: payload };
     case ActionTypes.AUTH_USER_LOGGED_OUT:
-      return { ...initState }
+      return { ...initState };
     case ActionTypes.USER_BALANCE_SET:
       return { ...state, balance: payload };
     case ActionTypes.USER_TRANSACTIONS:
@@ -26,6 +26,6 @@ const userReducer = (state = initState, action) => {
     default:
       return state;
   }
-}
+};
 
 export default userReducer;

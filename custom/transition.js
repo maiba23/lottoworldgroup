@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import Router from "next/router";
-import Loading from "components/common/loading";
+import Loading from "../components/common/loading";
 
 const Transition = ({ children }) => {
   const [loading, setLoading] = useState(false);

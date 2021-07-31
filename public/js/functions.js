@@ -327,7 +327,6 @@ jQuery(document).ready(function ($) {
   $("#menu-container").mouseleave(function () {
     $(".result_info").hide();
   });
-  $(".menu-item").prepend("<div className='menu-arrow'></div>");
 
   // Single number selection
   function selectSameExtraNumbers(id) {
