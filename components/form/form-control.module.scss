@@ -26,12 +26,13 @@
 .button {
   text-align: center;
   padding: 8px;
-  border: 1px solid #00c38a;
+  border: 1px solid #0169b2;
   border-radius: 4px;
-  background-color: #00c38a;
+  background-color: #0169b2;
   width: 100%;
+  color: white;
   &:hover {
-    background-color: #00d696;
+    background-color: #115892;
     transition: ease-in-out 0.3s;
   }
 }

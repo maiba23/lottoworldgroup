@@ -1,54 +1,154 @@
+import { useCallback, useMemo, useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import HeaderCoin from "../common/header-coin";
+import supported_coins from "../../data/coins.json";
+import { getCoins } from "../../service/client/coin";
 
-const Header = () => {
+import * as UserActions from "../../store/actions/user";
+import * as AuthActions from "../../store/actions/auth";
+
+// The approach used in this component shows how to built a sign in and sign out
+// component that works on pages which support both client and server side
+// rendering, and avoids any flash incorrect content on initial page load.
+export default function Header() {
+  const [nav, setNav] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [coinVals, setCoinVals] = useState({ BTH: 0, BCH: 0 });
+  const { coins } = supported_coins;
+
+  const toggleNav = useCallback(() => setNav(!nav), [nav]);
+  const cls = useMemo(() => (nav ? "show-nav clearfix" : "clearfix"), [nav]);
+  const profile = useSelector((state) => state.user.profile);
+  const balance = useSelector((state) => state.user.balance);
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+  const handleLogout = useCallback(() => {
+    dispatch(UserActions.logout());
+    dispatch(AuthActions.clearCredentials());
+    router.push("/");
+  }, []);
+
+  useEffect(() => {
+    getCoins().then((data) => {
+      setCoinVals(data);
+    });
+
+    setMounted(true);
+    jQuery(".contact-us-modal").on("click", function () {
+      jQuery("#contact-us-modal").modal({
+        fadeDuration: 300,
+      });
+    });
+
+    jQuery("#contact-us-modal .fa-close").on("click", function () {
+      jQuery("#contact-us-modal a.close-modal").click();
+    });
+
+    jQuery(".arrow_down_button").on("click", function () {
+      if (jQuery(this).closest("li.has-child.mobile-menu").hasClass("active")) {
+        jQuery("li.has-child.mobile-menu").removeClass("active");
+      } else {
+        jQuery("li.has-child.mobile-menu").removeClass("active");
+        jQuery(this).closest("li.has-child.mobile-menu").addClass("active");
+      }
+    });
+
+    return () => setMounted(false);
+  }, []);
+
   return (
-    <header id="header" className="clearfix">
-      <div className="wrap">
-        <Link href="/">
-          <a className="logo">LWG</a>
-        </Link>
-        <a href="#" data-href="nav" className="mobile-trigger trigger-nav">
-          <i>
-            <span className="line-1"></span> <span className="line-2"></span>
-            <span className="line-3"></span>
-          </i>
-        </a>
-        <div id="menu-container">
-          <div className="wrap-top-menu">
+    <header id="header" className={cls}>
+      <div className="menu">
+        <div className="wrap">
+          <div className="left_menu">
+            <Link href="/">
+              <a className="logo">LWG</a>
+            </Link>
             <ul id="menu-header-menu" className="top-menu">
               <li className="lottary-play show-dd menu-item menu-item-type-post_type menu-item-object-page menu-item-1395">
-                <Link href="/lottery">Lotteries</Link>
+                <Link href="/lottery">Lottery</Link>
               </li>
               <li className="lottary-info show-dd menu-item menu-item-type-post_type menu-item-object-page menu-item-1394">
                 <Link href="/lottery-results">Results</Link>
-              </li>
-              <li className="nav-item-my-account nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-1381 show-sign-up">
-                <Link href="/users/account">My Account</Link>
               </li>
               <li className="nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-1382">
                 <Link href="/support">Support</Link>
               </li>
             </ul>
-            <div className="wrap-cta">
-              <Link href="/auth/login">
-                <a className="show-sign-in">
-                  <i className="fas fa-sign-in-alt"></i>Log in
-                </a>
-              </Link>
-              <Link href="/auth/signup">
-                <a className="show-sign-up">
-                  <i className="fas fa-edit"></i>Register
-                </a>
-              </Link>
-            </div>
-            <Link href="/cart">
-              <a className="paymentheadercontrol"></a>
-            </Link>
+          </div>
+          <div className="right_menu">
+            {profile && mounted ? (
+              <div className="rsm-dropdown" style={{ marginRight: 32 }}>
+                <div className="rsm-dropdown-box">
+                  <div className="rsm-avatar">
+                    {profile.FirstName && profile.LastName
+                      ? `${profile.FirstName.charAt(
+                          0
+                        )}${profile.LastName.charAt(0)}`.toUpperCase()
+                      : profile.MemberId}
+                  </div>
+                  <div>
+                    <div className="rsm-account-username">
+                      {profile.FirstName && profile.LastName
+                        ? `${profile.FirstName} ${profile.LastName}`
+                        : "Player " + profile.MemberId}
+                    </div>
+                    <div className="rsm-account-balance">
+                      {balance && (
+                        <>
+                          <span>{`Balance: € ${balance.AccountBalance.toFixed(
+                            2
+                          )}`}</span>
+                          <span>{`Bonus: € ${balance.BonusAmount.toFixed(
+                            2
+                          )}`}</span>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                </div>
+                <div className="rsm-dropdown-content">
+                  <Link href="/user/me">
+                    <a>
+                      <i className="fa fa-user"></i>
+                      {`My Account (ID: ${profile.MemberId})`}
+                    </a>
+                  </Link>
+                  <Link href="/user/deposit">
+                    <a>
+                      <i className="fa fa-money"></i>Deposit
+                    </a>
+                  </Link>
+                  <Link href="/user/withdraw">
+                    <a>
+                      <i className="fa fa-credit-card"></i>Withdraw
+                    </a>
+                  </Link>
+                  <a href="#" onClick={handleLogout}>
+                    <i className="fa fa-sign-out-alt"></i>Log out
+                  </a>
+                </div>
+              </div>
+            ) : (
+              <div className="login-register">
+                <Link href="/auth/login">
+                  <a className="signin show-sign-in">
+                    <i className="fas fa-sign-in-alt"></i>Log in
+                  </a>
+                </Link>
+                <Link href="/auth/signup">
+                  <a className="register show-sign-up">
+                    <i className="fas fa-edit"></i>Register
+                  </a>
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>
     </header>
   );
-};
-
-export default Header;
+}

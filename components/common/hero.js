@@ -12,13 +12,7 @@ const Hero = ({ lottery }) => {
           height: "757px",
         }}
       >
-        <div
-          className="phoenix-feather"
-          style={{
-            zIndex: "99999",
-            opacity: "1",
-          }}
-        >
+        <div className="phoenix-feather">
           <div className="slider_content">
             <div className={"l-stageTemplate-banner " + lottery.name}>
               <div className="l-stageTemplate-banner-iconContainer">

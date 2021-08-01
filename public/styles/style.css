@@ -803,7 +803,6 @@ h4 {
   border-bottom: 5px solid #0169b2;
 }
 #header .logo {
-  position: absolute; /*margin-top: 5px;*/
   margin-top: 5px;
   z-index: 999;
   height: 72px;
@@ -830,7 +829,6 @@ h4 {
   flex-shrink: 0;
   display: inline;
   height: 51px; /*border-top: 5px solid #fff;*/
-  border-top: 5px solid #0169b2;
   padding: 0 10px;
 }
 #header .top-menu li:hover,
@@ -938,8 +936,7 @@ h4 {
   height: 51px;
   line-height: 51px;
   color: #fff;
-  margin-right: 1px; /*border-top: 5px solid #fff;*/
-  border-top: 5px solid #0169b2;
+  margin-right: 1px;
   padding: 0 10px; /*text-transform: uppercase;*/
   font-size: 16px;
   font-weight: normal;
@@ -1270,7 +1267,7 @@ button.show-sign-in:hover {
   left: 170px;
 }
 .bg-inner.mt-b-20 {
-  margin-bottom: 30px;
+  margin-top: 75px;
 }
 
 .hadding.inner-hadding.customheader {
@@ -6245,7 +6242,7 @@ h1.mob-title {
   min-height: 75%;
   display: table;
   width: 100%;
-  z-index: 9999;
+  z-index: 2 !important;
   opacity: 1;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -6695,6 +6692,7 @@ input.css-checkbox[type="radio"] + label.css-label.clr {
   /* ------------------------------------------------------------ *\
       Header Style
     \* ------------------------------------------------------------ */
+
   .result_info {
     left: 0px;
   }

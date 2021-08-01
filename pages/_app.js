@@ -5,6 +5,7 @@ import "nprogress/nprogress.css"; //styles of nprogress
 import { Provider } from "react-redux";
 import IdleLogout from "./_idle";
 import configureStore from "../store";
+import "./styles.scss";
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
