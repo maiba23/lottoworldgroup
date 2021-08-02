@@ -800,7 +800,6 @@ h4 {
 #header {
   /*background: #ffffff;*/
   background: #0169b2; /*border-bottom: 5px solid rgba(220,220,220, 0.7);*/
-  border-bottom: 5px solid #0169b2;
 }
 #header .logo {
   margin-top: 5px;
@@ -812,14 +811,7 @@ h4 {
   background: url(../images/lwg_logo.png) no-repeat 0 0;
   text-indent: -4000px;
 }
-#header .wrap-top-menu {
-  position: relative;
-  background: #0169b2;
-  z-index: 999;
-  width: 750px;
-  margin-top: 8px;
-  float: right;
-}
+
 #header .top-menu {
   display: flex;
   float: left;
@@ -4082,12 +4074,13 @@ input[type="radio"].css-checkbox + label.css-label.chk {
   background: #0830f4;
   width: 30px;
   height: 30px;
-  border-radius: 38px;
-  font-size: 16px; /*color: #2c4872;*/
+  border-radius: 50%;
+  font-size: 16px;
   color: white;
   float: left;
   text-align: center;
-  line-height: 28px; /*border: 2px solid #2c4872;*/
+  line-height: 28px;
+  border: 2px solid #2c4872;
   box-sizing: border-box;
 }
 .result_ellipse_green {
@@ -5194,18 +5187,21 @@ input[type="radio"].css-checkbox + label.css-label.chk {
 \* ------------------------------------------------------------ */
 .widthdrawpage {
   width: 100%;
-  font-family: "Poppins", sans-serif;
+  margin: 30px 0;
+  font-family: "open_sansregular";
 }
+
 .widthdrawpage .widthdrawpagetitle {
-  background-color: #245296;
   position: relative;
   width: 100%;
 }
+
 .widthdrawpage > div > .widthdrawinnercontainer {
   margin: 0 auto;
   width: 100%;
   padding: 10px;
 }
+
 .widthdrawpage
   .widthdrawpagetitle
   .widthdrawinnercontainer
@@ -5213,6 +5209,7 @@ input[type="radio"].css-checkbox + label.css-label.chk {
   padding-bottom: 10px;
   padding-top: 6px;
 }
+
 .widthdrawpage
   .widthdrawpagetitle
   .widthdrawinnercontainer
@@ -5224,6 +5221,7 @@ input[type="radio"].css-checkbox + label.css-label.chk {
   top: 4px;
   width: 32px;
 }
+
 .widthdrawpage
   .widthdrawpagetitle
   .widthdrawinnercontainer
@@ -5232,45 +5230,45 @@ input[type="radio"].css-checkbox + label.css-label.chk {
   display: inline-block;
   position: relative;
 }
+
 .widthdrawpage
   .widthdrawpagetitle
   .widthdrawinnercontainer
   .widthdrawtitleinner
   .widthdrawtitlepart
   h2 {
-  color: #fff;
   font-size: 18px;
 }
+
 .widthdrawpage .withdrawexplanation {
-  border: 1px solid #c6c6c6;
   box-sizing: border-box;
   padding-bottom: 2px;
   width: 100%;
 }
+
 .widthdrawpage .withdrawexplanation .widthdrawinnercontainer {
-  margin: 12px auto;
   width: 100%;
 }
+
 .widthdrawpage .withdrawexplanation .widthdrawinnercontainer p {
   color: #252626;
   font-size: 14px;
   line-height: 17px;
 }
+
 .widthdrawpage .widthdrawmoneyup {
-  border-bottom: 1px solid #c6c6c6;
-  border-left: 1px solid #c6c6c6;
-  border-right: 1px solid #c6c6c6;
   box-sizing: border-box;
-  height: 95px;
   overflow: hidden;
   width: 100%;
 }
+
 .widthdrawpage .widthdrawmoneyup .widthdrawmoneyupinner {
   box-shadow: 9px 4px 10px 0 #fff inset;
   padding: 10px;
   position: relative;
   width: 94%;
 }
+
 .widthdrawpage
   .widthdrawmoneyup
   .widthdrawmoneyupinner
@@ -5278,18 +5276,20 @@ input[type="radio"].css-checkbox + label.css-label.chk {
   margin: 0 auto;
   width: 100%;
 }
+
 .widthdrawpage
   .widthdrawmoneyup
   .widthdrawmoneyupinner
   .widthdrawinnercontainer
   h2 {
-  color: #245296;
-  font-size: 14px;
+  color: #0169b2;
+  font-size: 23px;
   font-weight: bold;
   position: relative;
   text-transform: uppercase;
   top: 10px;
 }
+
 .widthdrawpage
   .widthdrawmoneyup
   .widthdrawmoneyupinner
@@ -5301,23 +5301,25 @@ input[type="radio"].css-checkbox + label.css-label.chk {
   position: relative;
   top: 15px;
 }
+
 .widthdrawpage .widthdrawmoneydown {
-  border-color: #fff #c6c6c6 #c6c6c6;
-  border-left: 1px solid #c6c6c6;
-  border-right: 1px solid #c6c6c6;
-  border-style: solid;
-  border-width: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-sizing: border-box;
-  height: 130px;
-  overflow: hidden;
+  border-radius: 8px;
   width: 100%;
+  height: auto;
+  overflow: hidden;
 }
+
 .widthdrawpage .widthdrawmoneydown .widthdrawmoneydowninner {
-  box-shadow: 12px 5px 10px 10px #fff inset;
   position: relative;
-  width: 94%;
-  padding: 10px;
+  box-shadow: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
+
 .widthdrawpage
   .widthdrawmoneydown
   .widthdrawmoneydowninner
@@ -5329,9 +5331,36 @@ input[type="radio"].css-checkbox + label.css-label.chk {
   color: #80807e;
   font-size: 14px;
   height: 40px;
-  padding-left: 5px;
-  width: 108px;
+  text-align: right;
+  padding-left: 80px;
+  width: 130px;
 }
+
+.widthdrawpage
+  .widthdrawmoneydown
+  .widthdrawmoneydowninner
+  .howmuchwuthdrawinputtext
+  input {
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 1px solid #acb8c9;
+  box-shadow: 0px 0px 1px rgb(0 0 0 / 4%), 0px 0px 2px rgb(255 255 255 / 12%),
+    0px 4px 8px rgb(255 255 255 / 18%);
+  border-radius: 8px;
+  font-size: 28px;
+  color: #252626 !important;
+  text-shadow: 0px 6px 16px rgb(19 209 156 / 35%);
+  padding: 0 5px;
+}
+
+.deposit_amount-unit,
+.withdraw_amount-unit {
+  position: absolute;
+  left: 8px;
+  color: #252626;
+  top: 11px;
+}
+
 .widthdrawpage
   .widthdrawmoneydown
   .widthdrawmoneydowninner
@@ -5342,6 +5371,7 @@ input[type="radio"].css-checkbox + label.css-label.chk {
     0 0 rgba(0, 0, 0, 0);
   border: 1px solid red;
 }
+
 .widthdrawpage
   .widthdrawmoneydown
   .howmuchwuthdrawinputtext
@@ -5351,6 +5381,7 @@ input[type="radio"].css-checkbox + label.css-label.chk {
   font-size: 13px;
   font-style: normal;
 }
+
 .widthdrawpage
   .widthdrawmoneydown
   .howmuchwuthdrawinputtext
@@ -5360,6 +5391,7 @@ input[type="radio"].css-checkbox + label.css-label.chk {
   font-size: 13px;
   font-style: normal;
 }
+
 .widthdrawpage .depositsucessfull {
   border-bottom: 1px solid #c6c6c6;
   border-bottom-left-radius: 4px;
@@ -5369,18 +5401,21 @@ input[type="radio"].css-checkbox + label.css-label.chk {
   box-sizing: border-box;
   width: 100%;
 }
+
 .widthdrawpage .depositsucessfull .widthdrawinnercontainer {
   margin: 0 auto;
   padding-bottom: 23px;
   padding-top: 19px;
   width: 100%;
 }
+
 .widthdrawpage .depositsucessfull .widthdrawinnercontainer .likeimgwidthdraw {
-  background-image: url("/CSS_1/global../images/likenewthankyou.png");
+  background-image: url("/CSS_1/globalImages/likenewthankyou.png");
   display: inline-block;
   height: 25px;
   width: 28px;
 }
+
 .widthdrawpage
   .depositsucessfull
   .widthdrawinnercontainer
@@ -5390,22 +5425,29 @@ input[type="radio"].css-checkbox + label.css-label.chk {
   position: relative;
   vertical-align: top;
 }
+
 .widthdrawpage .widthdrawmoneydowninnerwrapper .errorwithdrawinner p {
   color: red;
   font-size: 14px;
 }
+
 .widthdrawpage
   .widthdrawmoneydown
   .widthdrawmoneydowninner
   .widthdrawmoneydowninnerwrapper {
+  display: flex;
+  align-items: center;
   margin: 0 auto;
-  position: relative;
-  top: 49px;
+  position: unset;
+  top: unset;
   width: 100%;
+  flex-wrap: wrap;
 }
+
 .widthdrawpage .widthdrawmoneydowninnerwrapper .errorwithdrawinner {
   margin-top: 2px;
 }
+
 .widthdrawpage .depositsucessfull .sucessfultextwidthdraw p {
   color: #10adf0;
   font-size: 14px;
@@ -5414,6 +5456,7 @@ input[type="radio"].css-checkbox + label.css-label.chk {
   text-transform: uppercase;
   top: 10px;
 }
+
 .widthdrawpage
   .widthdrawmoneydown
   .widthdrawmoneydowninner
@@ -5423,16 +5466,18 @@ input[type="radio"].css-checkbox + label.css-label.chk {
   font-size: 14px;
   position: relative;
   top: -3px;
+  margin: 0 !important;
 }
+
 .widthdrawpage
   .widthdrawmoneydown
   .widthdrawmoneydowninner
   .howmuchwuthdrawtext {
   display: inline-block;
-  position: relative;
-  top: -5px;
-  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 26px;
 }
+
 @media not all {
   .widthdrawpage
     .widthdrawmoneydown
@@ -5441,6 +5486,7 @@ input[type="radio"].css-checkbox + label.css-label.chk {
     top: -5px;
   }
 }
+
 @-moz-document url-prefix("") {
   .widthdrawpage
     .widthdrawmoneydown
@@ -5449,27 +5495,20 @@ input[type="radio"].css-checkbox + label.css-label.chk {
     top: -3px;
   }
 }
+
 .widthdrawpage
   .widthdrawmoneydown
   .widthdrawmoneydowninner
   .howmuchwuthdrawinputtext {
   display: inline-block;
-  left: 5px;
   position: relative;
-  top: -6px;
+  margin-left: 10px;
 }
-.widthdrawpage
-  .widthdrawmoneydown
-  .widthdrawmoneydowninner
-  .widthdrawmoneydowninnerwrapper {
-  margin: 0 auto;
-  position: relative;
-  top: 20px;
-  width: 100%;
-}
+
 .widthdrawpage .widthdrawmoneydowninnerwrapper .errorwithdrawinner {
   margin-top: 2px;
 }
+
 .widthdrawpage .depositsucessfull .sucessfultextwidthdraw p {
   color: #10adf0;
   font-size: 14px;
@@ -5478,27 +5517,39 @@ input[type="radio"].css-checkbox + label.css-label.chk {
   text-transform: uppercase;
   top: 10px;
 }
+
 .widthdrawpage .widthdrawmoneydown .widthdrawmoneydowninner .withdrawbtnpart {
   display: inline-block;
-  left: 15px;
   position: relative;
-  top: -6px;
-  vertical-align: top;
+  margin-left: 20px;
 }
+
 .widthdrawpage
   .widthdrawmoneydown
   .widthdrawmoneydowninner
   .withdrawbtnpart
   .withdrawbtn {
-  background-color: #245296;
-  color: #fff;
+  background-color: #0169b2;
   border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
   cursor: pointer;
   height: 40px;
   position: relative;
   top: 0;
-  width: 158px;
+  color: white !important;
 }
+
+.myaccount_detail_error,
+.cardupdatemsg {
+  line-height: 33px;
+  color: red;
+  font-size: 15px;
+}
+
 @media not all {
   .widthdrawpage
     .widthdrawmoneydown
@@ -5508,6 +5559,7 @@ input[type="radio"].css-checkbox + label.css-label.chk {
     top: 0;
   }
 }
+
 @-moz-document url-prefix("") {
   .widthdrawpage
     .widthdrawmoneydown
@@ -5517,13 +5569,15 @@ input[type="radio"].css-checkbox + label.css-label.chk {
     top: 0;
   }
 }
+
 .widthdrawpage
   .widthdrawmoneydown
   .widthdrawmoneydowninner
   .withdrawbtnpart
   .withdrawbtn:hover {
-  background: #06a153;
+  background: #1d3265;
 }
+
 .widthdrawpage
   .widthdrawmoneydown
   .widthdrawmoneydowninner
@@ -5535,17 +5589,17 @@ input[type="radio"].css-checkbox + label.css-label.chk {
   line-height: 16px;
   position: relative;
   text-align: center;
-  top: 3px;
   width: 100%;
 }
+
 .widthdrawpage
   .widthdrawmoneydown
   .widthdrawmoneydowninner
   .withdrawbtnpart
   .withdrawbtn
   p.withdrawbtntxt {
-  top: 12px;
   color: #fff !important;
+  margin: 0 !important;
 }
 .allbrands tr,
 .infocontent tr,
@@ -6737,7 +6791,6 @@ input.css-checkbox[type="radio"] + label.css-label.clr {
 @media screen and (min-width: 768px) and (max-width: 1000px) {
   .wrap {
     width: 96%;
-    margin: 0 2%;
   }
   .h_registerpart ul li {
     margin: 1%;
@@ -6872,18 +6925,7 @@ input.css-checkbox[type="radio"] + label.css-label.clr {
     padding: 5px 0;
     height: 70px;
   }
-  #header .wrap-top-menu {
-    background: none;
-    width: 200px;
-    right: 40px;
-    top: 10px;
-    position: absolute;
-  }
-  #header .wrap-top-menu .top-menu li a {
-    padding-left: 15px;
-    width: 100%;
-    text-align: left;
-  }
+
   #header .mobile-trigger {
     float: right;
     display: inline-block;
@@ -7112,7 +7154,6 @@ input.css-checkbox[type="radio"] + label.css-label.clr {
   /* #main { margin-top: 70px; } */
   .wrap {
     width: 96%;
-    margin: 0 2%;
   }
   .logo {
     margin-left: 0;
@@ -11523,4 +11564,50 @@ li.lottary-play:hover .playlottary {
 
 button:focus {
   outline: none !important;
+}
+
+.ticker-select {
+  margin-left: 20px;
+  position: relative;
+}
+
+.ticker-select > select {
+  margin-bottom: 0;
+  padding: 0 10px;
+  box-sizing: border-box;
+  background: transparent;
+  border: 1px solid #acb8c9;
+  box-shadow: 0px 0px 1px rgb(0 0 0 / 4%), 0px 0px 2px rgb(255 255 255 / 12%),
+    0px 4px 8px rgb(255 255 255 / 18%);
+  border-radius: 8px;
+  height: 40px;
+  color: #252626;
+  width: 120px;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.ticker-select::after {
+  content: "";
+  position: absolute;
+  background: url(/images/select-arrow.png) no-repeat;
+  right: 5px;
+  top: 11px;
+  background-size: contain;
+  width: 10px;
+  height: 22px;
+}
+
+.withdraw_wallet-address-input {
+  border: 1px solid #00c38a;
+  box-sizing: border-box;
+  background-color: transparent;
+  box-shadow: 0px 0px 4px rgb(19 209 156 / 45%);
+  border-radius: 8px;
+  font-size: 14px;
+  color: #00c38a;
+  text-shadow: 0px 6px 16px rgb(19 209 156 / 35%);
+  padding: 10px;
+  width: 350px;
 }

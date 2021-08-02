@@ -149,6 +149,64 @@ export default function Header() {
           </div>
         </div>
       </div>
+      <div className="wrap new_header_mobile_menu">
+        <Link href="/">
+          <a className="logo">LWG</a>
+        </Link>
+        <a
+          data-href="nav"
+          className="mobile-trigger trigger-nav"
+          onClick={toggleNav}
+        >
+          <i>
+            <span className="line-1"></span>
+            <span className="line-2"></span>
+            <span className="line-3"></span>
+          </i>
+        </a>
+        <div id="menu-container">
+          <ul className="wrap-top-menu">
+            <li>
+              <Link href="/lottery">Lottery</Link>
+            </li>
+            <li>
+              <Link href="/lottery-results">Results</Link>
+            </li>
+            <li>
+              <Link href="/support">Support</Link>
+            </li>
+            {profile && mounted ? (
+              <>
+                <li>
+                  <Link href="/user/me">{`My Account (ID: ${profile.MemberId})`}</Link>
+                </li>
+                <li>
+                  <a href="#" onClick={handleLogout}>
+                    Log out
+                  </a>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link href="/auth/login">
+                    <a className="button">
+                      <i className="fas fa-sign-in-alt"></i>Log in
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/auth/signup">
+                    <a className="button">
+                      <i className="fas fa-sign-in-alt"></i>Register
+                    </a>
+                  </Link>
+                </li>
+              </>
+            )}
+          </ul>
+        </div>
+      </div>
     </header>
   );
 }

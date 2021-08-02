@@ -58,7 +58,6 @@ a.disabled {
   z-index: 1001;
 
   & .modal-dialog {
-    font-family: "Gilroy-Regular";
     background-color: $color-white;
     min-width: 240px;
     color: #222;
@@ -116,7 +115,6 @@ a.disabled {
     font-size: 18px;
     line-height: 26px;
     color: $color-white;
-    font-family: "Gilroy-Regular";
   }
 }
 
@@ -209,7 +207,6 @@ img {
         }
 
         & li a {
-          font-family: Gilroy-bold;
           transition: 0.3s;
           line-height: 50px;
           height: 47px;
@@ -258,7 +255,6 @@ img {
           color: $color-white;
           padding: 10px 15px;
           transition: 0.8s;
-          font-family: Gilroy-Bold;
           font-size: 14px;
           line-height: 15px;
         }
@@ -274,7 +270,6 @@ img {
           padding: 10px 15px;
           margin-left: 10px;
           transition: 0.8s;
-          font-family: Gilroy-Bold;
           font-size: 13px;
           line-height: 15px;
         }
@@ -292,7 +287,9 @@ img {
       }
     }
   }
-
+  & .new_header_mobile_menu {
+    display: none;
+  }
   & .header-title-main {
     font-family: Montserrat, sans-serif;
     font-weight: 700;
@@ -322,7 +319,6 @@ img {
       height: 32px;
       border-radius: 50%;
       background-color: $color-primary;
-      font-family: Gilroy-bold;
       font-size: 16px;
       line-height: 2;
       text-align: center;
@@ -427,7 +423,7 @@ img {
     border-radius: 4px;
     padding: 8px 15px;
     color: $color-white;
-    font-family: "Gilroy-Bold";
+
     font-size: 16px;
     height: unset;
     text-transform: uppercase;
@@ -484,12 +480,10 @@ img {
 
   & .title {
     color: white;
-    font-family: Gilroy-Regular;
     line-height: 16px;
   }
 
   & .value {
-    font-family: Gilroy-Bold;
     line-height: 14px;
   }
 }
@@ -518,7 +512,7 @@ img {
 
   #header .new_header_mobile_menu {
     position: relative;
-    background: $color-background;
+    background: linear-gradient(180deg, #0169b2 0%, #212529 100%);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -588,7 +582,6 @@ img {
       background: transparent;
       color: $color-white;
       transition: 0.8s;
-      font-family: Gilroy-Bold;
       line-height: 15px;
     }
 
@@ -611,7 +604,6 @@ img {
     & .wrap-top-menu li {
       width: 100%;
       font-size: 16px;
-      font-family: "Gilroy-Regular";
       color: white;
       box-sizing: border-box;
       display: flex;
@@ -673,14 +665,13 @@ img {
       width: 100%;
       padding: 20px;
       font-size: 16px;
-      font-family: "Gilroy-Regular";
       color: white;
       box-sizing: border-box;
     }
   }
 
   #header.show-nav .wrap.new_header_mobile_menu #menu-container {
-    height: 1100px;
+    height: 100vh;
     transition: ease-in-out 0.8s;
   }
 
@@ -719,7 +710,6 @@ img {
 #middle .tablesorter-result {
   & thead th {
     background-color: transparent;
-    font-family: Gilroy-Bold;
     font-size: 24px;
   }
 
@@ -812,7 +802,6 @@ img {
 }
 
 a.playNowBtn {
-  font-family: Gilroy-Regular;
   font-weight: 600;
   font-size: 16px;
   white-space: nowrap;
@@ -830,7 +819,6 @@ a.playNowBtn {
 
 .raffle-list {
   margin: 32px 0;
-  font-family: Gilroy-bold;
 
   & .raffle-list-title {
     text-align: center;
@@ -843,7 +831,6 @@ a.playNowBtn {
   }
 
   & a.playNowBtn {
-    font-family: Gilroy-Regular;
     font-size: 16px;
     white-space: nowrap;
     color: #fff;
@@ -889,7 +876,6 @@ a.playNowBtn {
         padding-left: 15px;
 
         & .jackpot-amount {
-          font-family: Gilroy-bold;
           font-size: 2.7rem;
           color: #13d19c;
           line-height: 1;
@@ -928,8 +914,6 @@ a.playNowBtn {
 
 /* cart page */
 .cart-wrapper {
-  font-family: Gilroy-Bold;
-
   & .cart-page {
     & .cart-static {
       font-size: 12px;
@@ -1142,7 +1126,6 @@ a.playNowBtn {
 
   & .cart-error {
     color: red;
-    font-family: Gilroy-Regular;
     font-weight: 300;
     padding: 16px;
     word-break: break-all;
@@ -1287,7 +1270,6 @@ a.playNowBtn {
 
 .free-lotteries {
   color: $color-white;
-  font-family: Gilroy-bold;
 
   h1 {
     font-size: 32px;
@@ -1344,7 +1326,6 @@ a.playNowBtn {
       margin: 16px 0;
 
       & .playNowBtn {
-        font-family: Gilroy-Bold;
         font-size: 16px;
         white-space: nowrap;
         color: #ffffff;
@@ -1479,7 +1460,6 @@ a.playNowBtn {
     padding: 0;
 
     & .jackpotAmount {
-      font-family: Gilroy-bold;
       font-size: 52px;
       color: #212b41;
       -webkit-text-stroke-width: 1px;
@@ -1732,10 +1712,9 @@ a.playNowBtn {
 // my account page
 .wrap-my-account {
   padding: 0px 0 40px;
-  color: $color-white;
+  color: rgb(29, 50, 101);
   font-size: 16px;
   margin-top: 20px;
-  font-family: Gilroy-Bold;
 
   & .my-account-title > h1 {
     font-size: 32px;
@@ -1750,11 +1729,7 @@ a.playNowBtn {
         display: inline-block;
 
         & li {
-          background: linear-gradient(
-            180deg,
-            $color-background 0%,
-            $color-darkbg 100%
-          );
+          background-color: rgb(29, 50, 101);
           box-shadow: 0px 2px 4px $color-black,
             inset 0px 0.51px 0px rgb(255 255 255 / 30%);
           border-radius: 3px;
@@ -1777,7 +1752,7 @@ a.playNowBtn {
             height: 96px;
 
             &.active {
-              color: $color-primary !important;
+              font-weight: bold;
             }
 
             & > i {
@@ -1815,7 +1790,8 @@ a.playNowBtn {
             margin-left: 16px;
             display: inline-block;
             &.money {
-              color: $color-primary-hover;
+              color: $color-primary;
+              font-weight: bold;
             }
           }
         }
@@ -1828,7 +1804,6 @@ a.playNowBtn {
             padding: 8px 16px;
             text-align: center;
             color: $color-white;
-            font-family: "Gilroy-Bold";
             text-decoration: none;
             font-size: 16px;
             min-width: 120px;
@@ -1889,7 +1864,7 @@ a.playNowBtn {
       }
     }
 
-    & .tab-page {
+    .tab-page {
       & .account-form {
         display: flex;
         flex-wrap: wrap;
@@ -1917,16 +1892,16 @@ a.playNowBtn {
             align-self: stretch;
             min-width: 360px;
             height: 48px;
-            border: 1px solid $color-white;
+            border: 1px solid #acb8c9;
             box-sizing: border-box;
             box-shadow: 0px 4px 8px rgb(255 255 255 / 15%);
             border-radius: 8px;
-            background-color: $color-background;
-            color: $color-white;
+
+            color: black;
             padding: 5px 15px;
 
             &:focus {
-              border: 1px solid $color-primary-hover;
+              border: 1px solid #00ae77;
             }
           }
         }
@@ -1942,18 +1917,17 @@ a.playNowBtn {
           }
 
           & .chpwd-button {
-            font-family: Gilroy-Bold;
             font-size: 24px;
-            color: $color-primary-hover;
+            color: $color-primary;
+            font-weight: bold;
             text-shadow: 0px 4px 8px rgb(19 209 156 / 15%);
             cursor: pointer;
           }
         }
 
         & .update-button {
-          background: #13d19c !important;
+          background: $color-primary !important;
           border-radius: 4px;
-          font-family: Gilroy-Bold;
           font-size: 18px;
           max-width: 315px;
           width: 100%;
@@ -1982,18 +1956,13 @@ a.playNowBtn {
         overflow-x: auto;
         & table {
           min-width: 720px;
-          border: none;
           border-collapse: collapse;
           overflow: auto;
           margin: 16px 0;
           width: 100%;
 
           & thead {
-            background: linear-gradient(
-              180deg,
-              $color-background 0%,
-              $color-darkbg 100%
-            );
+            background: $color-primary;
             box-shadow: 0px 2px 4px $color-black,
               inset 0px 0.51px 0px rgb(255 255 255 / 30%);
             border-radius: 3px;
@@ -2002,8 +1971,7 @@ a.playNowBtn {
             color: $color-white;
 
             & th {
-              font-family: Gilroy-Bold;
-              font-size: 18px;
+              font-size: 16px;
               color: $color-white;
               padding-top: 10px;
               padding-bottom: 10px;
@@ -2014,13 +1982,12 @@ a.playNowBtn {
 
           & tbody {
             & tr td {
-              font-family: Gilroy-Regular;
               height: 48px;
               font-size: 16px;
               line-height: 3;
               text-align: center;
               font-weight: normal;
-              border: 1px solid $color-white;
+              border: 1px solid #edecec;
             }
           }
 
@@ -2049,7 +2016,6 @@ a.playNowBtn {
               & th,
               & td {
                 font-weight: 500 !important;
-                border: none;
                 font-size: 18px;
               }
 
@@ -2059,8 +2025,8 @@ a.playNowBtn {
                 & td .drawer-header-icon {
                   width: 26px;
                   height: 26px;
-                  background: #00c38a url("/images/right_long_white_arrow.svg")
-                    no-repeat center;
+                  background: $color-primary
+                    url("/images/right_long_white_arrow.svg") no-repeat center;
                   border-radius: 4px;
                   margin: auto;
                 }
@@ -2099,8 +2065,8 @@ a.playNowBtn {
                 & td .drawer-header-icon {
                   width: 26px;
                   height: 26px;
-                  background: #00c38a url("/images/right_long_white_arrow.svg")
-                    no-repeat center;
+                  background: $color-primary
+                    url("/images/right_long_white_arrow.svg") no-repeat center;
                   border-radius: 4px;
                   margin: auto;
                 }
@@ -2174,8 +2140,7 @@ a.playNowBtn {
     & h1.item-title {
       font-size: 24px;
       line-height: 42px;
-      color: #00c58a;
-      font-family: "Gilroy-bold";
+      color: $color-primary;
       margin-bottom: 40px;
       text-transform: none;
 
@@ -2192,14 +2157,11 @@ a.playNowBtn {
       }
 
       & .content {
-        // flex-grow: 1;
         & h1.item-title {
           font-size: 22px;
           line-height: 36px;
-          color: #00c58a;
-          font-family: "Gilroy-bold";
+          color: $color-primary;
           margin-bottom: 20px;
-
           &:not(:first-child) {
             margin-top: 40px;
           }
@@ -2519,12 +2481,12 @@ a.playNowBtn {
   align-items: center;
   padding: 16px;
   color: $color-white;
-  background-color: $color-background;
+  background-color: $color-primary;
   font-size: 20px;
   font-weight: 500;
 
   & button {
-    background: linear-gradient(180deg, #111724 0%, #090e18 100%);
+    background: $color-primary;
     box-shadow: 0px 2px 4px #000000, inset 0px 0.51px 0px rgb(255 255 255 / 30%);
     border-radius: 3px;
     border: none;
@@ -2638,4 +2600,8 @@ a.playNowBtn {
     box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
       0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
   }
+}
+
+.hidden {
+  display: none !important;
 }

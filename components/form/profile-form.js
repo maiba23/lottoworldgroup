@@ -2,7 +2,7 @@ import React, { useCallback, useState, useReducer, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import FormInput, { FormSelect } from "./form-control";
 
-import * as UserActions from "store/actions/user";
+import * as UserActions from "../../store/actions/user";
 
 const ProfileForm = ({ countries }) => {
   const profile = useSelector((state) => state.user.profile);
@@ -177,7 +177,7 @@ const ProfileForm = ({ countries }) => {
       />
       <FormInput
         id="email"
-        label="Email Address"
+        label="Email"
         type="text"
         name="email"
         value={email}
