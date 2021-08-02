@@ -802,13 +802,14 @@ h4 {
   background: #0169b2; /*border-bottom: 5px solid rgba(220,220,220, 0.7);*/
 }
 #header .logo {
-  margin-top: 5px;
+  margin: 5px 0;
   z-index: 999;
   height: 72px;
   width: 241px;
   float: left;
   display: inline-block;
-  background: url(../images/lwg_logo.png) no-repeat 0 0;
+  background: url(../images/logo.png) no-repeat 0 0;
+  background-size: contain;
   text-indent: -4000px;
 }
 

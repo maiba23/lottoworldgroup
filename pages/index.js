@@ -46,7 +46,7 @@ export default function Home(props) {
   return (
     <Layout>
       <Head>
-        <title>Play lotteries online - LWG</title>
+        <title>Play lotteries online - QIWI</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
