@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import IdleLogout from "./_idle";
 import configureStore from "../store";
 import "./styles.scss";
+import ErrorBoundary from "../components/error-boundary";
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
@@ -17,16 +18,18 @@ export default function MyApp({ Component, pageProps }) {
 
   return (
     !!store && (
-      <Provider store={store}>
-        <Transition>
-          <ProtectedRoute
-            config={{ match: "/(user|btcraffles)/*", url: "/auth/login" }}
-          >
-            <IdleLogout timeout={30 * 60 * 1000} />
-            <Component {...pageProps} />
-          </ProtectedRoute>
-        </Transition>
-      </Provider>
+      <ErrorBoundary>
+        <Provider store={store}>
+          <Transition>
+            <ProtectedRoute
+              config={{ match: "/(user|btcraffles)/*", url: "/auth/login" }}
+            >
+              <IdleLogout timeout={30 * 60 * 1000} />
+              <Component {...pageProps} />
+            </ProtectedRoute>
+          </Transition>
+        </Provider>
+      </ErrorBoundary>
     )
   );
 }
