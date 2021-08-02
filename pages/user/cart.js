@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import Layout from "../../components/layout";
 import { ModalDialog } from "../../components/dialog";
 import { currencies } from "../../helpers/constants";
-import { confirmOrder, confirmOrderFireGame } from "service/client/order";
+import { confirmOrder, confirmOrderFireGame } from "../../service/client/order";
 
 const CartPage = () => {
   const [currency, setCurrency] = useState("");
