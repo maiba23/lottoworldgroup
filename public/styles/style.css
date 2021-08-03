@@ -1560,17 +1560,70 @@ div#rp_nav {
 #rp_nav_left {
   float: left;
 }
-#middle {
-  float: left;
-  margin-top: -132px;
-  min-height: 133px;
-  padding: 20px 0;
-  width: 100%;
-}
+
 .lotterydetail {
   /*margin-top: -180px !important;*/
   margin-top: 0px !important;
 }
+.lotterydetail .select_num_col .all_num_part {
+  border-radius: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 15px;
+}
+
+.lotterydetail .lt_numbers_wrapper {
+  width: 100%;
+  z-index: 6;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.lotterydetail .lt_numbers_wrapper span {
+  width: 28px;
+  height: 28px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin: 0 auto;
+  background: white;
+  font-family: "Gilroy-Bold";
+  font-size: 16px;
+}
+
+.lotterydetail .select_num_part_wrapper {
+  width: 100% !important;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 10px;
+  row-gap: 10px;
+  padding: 0;
+}
+.lotterydetail .select_num_col .select_num_part {
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0 0 8px 8px;
+  padding: 15px;
+}
+.lotterydetail .cardlist .select_num_part_wrapper span {
+  margin: 0 auto;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #00c38a;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #middle_about .news {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -3411,8 +3464,7 @@ h3 span {
   padding-left: 50px;
 }
 .tabin_main {
-  float: left;
-  width: 100%;
+  display: flex;
 }
 .tabin_main_group {
   width: 98%;
@@ -3431,9 +3483,9 @@ h3 span {
   margin-top: 20px;
 }
 .tabin_main_select {
-  width: 100%;
-  padding: 0;
-  box-sizing: border-box;
+  display: flex;
+  flex: 4;
+  justify-content: space-between;
 }
 .play-btn-result-page {
   /*background-color: #00ab72;*/
@@ -4227,10 +4279,8 @@ input[type="radio"].css-checkbox + label.css-label.chk {
   width: 100%;
 }
 .select_num_col {
-  width: 25%;
-  float: left;
+  width: 100%;
   padding: 5px 5px;
-  box-sizing: border-box;
 }
 .select_num_col_part {
   width: 100%;
@@ -4244,8 +4294,8 @@ input[type="radio"].css-checkbox + label.css-label.chk {
   border: 1px solid #e1dfdf;
 }
 .select_num_col_part-blue {
-  width: 100%; /*height: 610px;*/
-  height: 100%; /*background-color: rgba(103,136,211, 0.1);*/
+  width: 100%;
+  height: 100%;
   position: absolute;
   z-index: 2;
 }
@@ -4254,6 +4304,7 @@ input[type="radio"].css-checkbox + label.css-label.chk {
   -moz-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.5);
   box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.5);
   border: 0 none !important;
+  height: 100%;
 }
 .select_num_col:hover .select_num_col_part-blue {
   display: none;
@@ -4267,6 +4318,14 @@ input[type="radio"].css-checkbox + label.css-label.chk {
 .select_num_col:hover .all_num_part {
   -webkit-border-radius: 0 0 4px 4px;
   border-radius: 0 0 4px 4px;
+}
+.lotterydetail .select_num_part_wrapper {
+  width: 100% !important;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 10px;
+  row-gap: 10px;
+  padding: 0;
 }
 .all_num_part {
   width: 100%;
@@ -4336,30 +4395,14 @@ input[type="radio"].css-checkbox + label.css-label.chk {
   line-height: 25px;
   box-sizing: border-box;
 }
-.lt_numbers_wrapper span:nth-child(6n) {
-  margin-right: 0px;
-}
+
 .lt_numbers_wrapper span:hover {
   /*background-color: #5082c8;*/
   background-color: #5082c8;
   cursor: pointer;
   color: #fff;
 }
-.select_num_part {
-  width: 100%;
-  float: left;
-  padding: 10px 20px;
-  margin-top: 5px;
-  box-sizing: border-box;
-  background-color: #fff;
-  border-top: 1px solid #e1dfdf; /* background-color: rgb(134,167,212);
-    border-radius: 0px 0px 4px 4px; 
-    -moz-border-radius: 0px 0px 4px 4px; 
-    -webkit-border-radius: 0px 0px 4px 4px;
-    -webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
-    -moz-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
-    box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8); */
-}
+
 .select_num_part_wrapper {
   width: 100%;
   cursor: pointer;
@@ -6758,9 +6801,7 @@ input.css-checkbox[type="radio"] + label.css-label.clr {
   .lt_numbers_wrapper span {
     margin: 0px 3px 3px 0px;
   }
-  .lt_numbers_wrapper span:nth-child(5n) {
-    margin: 0px 3px 3px 0px;
-  }
+
   .select_num_part_wrapper span {
     margin: 0px 3px 3px 0px;
   }
@@ -7013,9 +7054,7 @@ input.css-checkbox[type="radio"] + label.css-label.clr {
   .innerbg_select_page {
     background-image: none;
   }
-  #middle {
-    margin-top: 0px !important;
-  }
+
   .lotto-owl-slider .owl-carousel {
     margin-top: 0 !important;
   }
@@ -7492,12 +7531,7 @@ input.css-checkbox[type="radio"] + label.css-label.clr {
   .expanded .lt_numbers_wrapper span {
     border: 1px solid #e3e1e1;
   }
-  .lt_numbers_wrapper span:nth-child(6n) {
-    margin: 0 6px 5px 0px;
-  }
-  .lt_numbers_wrapper span:nth-child(5n) {
-    margin: 0px 5px 5px 0px;
-  }
+
   #buy-now-page ul {
     display: none;
   }
@@ -8716,7 +8750,7 @@ a.remodal-close.error-close {
 
 .beton-header {
   width: 100%;
-  height: 80px;
+  height: 115px;
   margin: 0 0 10px 0px;
   padding: 0 0 0 0;
   border-top-left-radius: 5px;
@@ -8726,6 +8760,14 @@ a.remodal-close.error-close {
   color: #fff;
   font-weight: 500;
   line-height: 13px;
+}
+.beton-header-mobile-section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 .beton-header.megamillions {
   background: linear-gradient(#333796, #cf8486);
@@ -8894,8 +8936,8 @@ a.remodal-close.error-close {
   float: left;
   padding: 7px 5px 7px 5px; /*margin: 0 10px 0 0;*/
   margin: 0px;
-  background-color: #05ce05;
-  border: 1px solid #05ce05;
+  background-color: #13d19c;
+  border: 1px solid #13d19c;
   border-radius: 20px;
 }
 .lotto-action-container .btn-magic-all:hover,
@@ -8944,9 +8986,8 @@ h2.play-jackpot {
 .all-lot-title h1 {
   text-shadow: 0 0 0;
   font-size: 25px;
-  line-height: 40px;
+  line-height: 70px;
   color: #0169b2;
-  margin-bottom: 15px;
   border-bottom: none;
   text-transform: capitalize;
   font-family: "Poppins", sans-serif;
@@ -10316,7 +10357,6 @@ input:focus {
 }
 .lotto-results-section {
   width: 46%; /* overflow: hidden;*/
-  height: 530px;
   float: right;
 }
 .play-in-group-section .home-banner-new {
@@ -10456,7 +10496,15 @@ input:focus {
 .lotteryresultslist-new .simply-scroll-clip {
   height: 410px;
 }
+@media screen and (max-width: 1410px) {
+  .lotterydetail .tabin_main {
+    flex-direction: column;
+  }
 
+  .last-section {
+    margin-top: 20px;
+  }
+}
 @media screen and (max-width: 970px) {
   .play-in-group-section {
     width: 100%;
@@ -10711,9 +10759,7 @@ input:focus {
   .lotteryresultslist-new li.block .result-join-now-link a {
     padding: 5px 5px;
   }
-  .lotto-results-section {
-    height: 535px;
-  }
+
   .loyality_div-new h2 {
     height: 100px;
   }
@@ -10780,8 +10826,7 @@ input:focus {
     display: none;
   }
   .lotterydetail .tabin_main {
-    margin-top: 0;
-    border: none;
+    flex-direction: column;
   }
   .lotterydetail .option_table.left {
     border: none;
@@ -10838,9 +10883,7 @@ input:focus {
     top: 0;
     position: relative;
   }
-  .page-template-deposit #middle {
-    margin-top: -90px !important;
-  }
+
   .page-template-deposit .formcol.formcolright {
     width: auto;
     float: left;
@@ -10964,10 +11007,7 @@ ul.menu-result-container li.res-menu-item .menu-info-line.info-line-text {
   color: gray;
   cursor: pointer;
 }
-div.buy-now-section-new {
-  width: 20%;
-  float: left;
-}
+
 div.buy-now-section-new .one-time-entry label {
   font-size: 20px;
 }
@@ -10980,14 +11020,9 @@ div.buy-now-section-new .one-time-entry label {
   width: 100%;
 }
 .last-section {
-  padding: 5px 0;
-  width: 19%;
-  float: left;
-  margin-left: 6px;
+  flex: 1;
 }
 div.buy-now-section-new {
-  width: 96%;
-  float: left;
   border: 1px solid #e1dfdf;
 }
 .space_add span.tooltip {
@@ -11328,23 +11363,25 @@ span.bin.oro-bonus-money {
   display: flex;
   align-items: center;
 }
+.group-ticket-button,
 .person-ticket-button {
   color: white;
-  font-size: 14px;
-  border: 1px solid #51a33b;
+  font-size: 20px;
   text-align: center;
-  padding: 22px 5px;
-  margin-left: 10px;
-  width: 150px;
-  display: flex;
-  align-items: center;
+  padding: 20px;
+  line-height: 1;
+
   justify-content: center;
-  border-radius: 5px;
-  background: linear-gradient(to bottom, #b4e391 15%, #61c419 55%);
+  border-radius: 4px;
+  background: #13d19c;
 }
+.group-ticket-button:hover,
 .person-ticket-button:hover {
-  background: #0df90d;
-  color: white;
+  opacity: 0.8;
+  transition: 0.3s;
+  color: #fff !important;
+  text-decoration: none !important;
+  background: #8bc53f;
 }
 .person-ticket-button img {
   margin-right: 5px;

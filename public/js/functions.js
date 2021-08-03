@@ -4746,18 +4746,6 @@ function go_to_page(page_num, div, innerdiv) {
 
       this.ashes.each(function (index) {
         ash = $(this);
-
-        pic = ash.children("img");
-
-        ash.css({
-          "background-image": "url(" + pic.attr("src") + ")",
-          // 'filter': "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + pic.attr('src') + "', sizingMethod='scale')",
-          // '-ms-filter': "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + pic.attr('src') + "', sizingMethod='scale')",
-        });
-
-        if (index == 0) ash.css("z-index", 99999);
-
-        pic.remove();
       });
 
       // Adding Touch Support with jQueryMobile

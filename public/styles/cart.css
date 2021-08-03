@@ -2343,9 +2343,7 @@ body.ngdialog-open {
   .mobile-hide {
     display: none;
   }
-  #middle {
-    margin-top: -82px !important;
-  }
+
   .row-special {
     margin-right: 0px !important;
   }

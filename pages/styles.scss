@@ -106,7 +106,7 @@ a.disabled {
 }
 
 #main {
-  margin-top: 64px;
+  margin-top: 80px;
   margin-bottom: 64px;
   padding: 0px;
 
@@ -114,7 +114,6 @@ a.disabled {
     margin-bottom: 10px;
     font-size: 18px;
     line-height: 26px;
-    color: $color-white;
   }
 }
 
@@ -708,11 +707,6 @@ img {
 
 #middle .lotteries-table,
 #middle .tablesorter-result {
-  & thead th {
-    background-color: transparent;
-    font-size: 24px;
-  }
-
   & tbody td {
     border-color: transparent !important;
     padding: 11px 11px 11px 20px;
@@ -2604,4 +2598,10 @@ a.playNowBtn {
 
 .hidden {
   display: none !important;
+}
+
+.desktop-ticket-buttons {
+  display: flex;
+  flex-shrink: 0;
+  margin-left: 15px;
 }
