@@ -2605,3 +2605,29 @@ a.playNowBtn {
   flex-shrink: 0;
   margin-left: 15px;
 }
+.btn-magic-all-text {
+  margin-left: 10px;
+}
+.oro-lines-draws {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.oro-bonus-money-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.oro-bmcurrency {
+  font-size: 16px !important;
+}
+.oro-total-price-text {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+.oro-fill-width {
+  width: -webkit-fill-available;
+}

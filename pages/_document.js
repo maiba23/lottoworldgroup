@@ -92,7 +92,6 @@ class MyDocument extends Document {
           <script type="text/javascript" src="/js/cart.build.js"></script>
           <script type="text/javascript" src="/js/cart.js"></script>
           <script type="text/javascript" src="/js/custom.js"></script>
-          <script type="text/javascript" src="/js/functions.js"></script>
           <script type="text/javascript" src="/js/jquery.countdown.js"></script>
           <script
             type="text/javascript"

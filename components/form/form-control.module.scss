@@ -61,16 +61,34 @@
     padding-left: 28px;
 
     &:before {
-      content: " ";
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      border: 2px white solid;
-      background: transparent;
+      content: "";
+      width: 5px;
+      height: 5px;
+      position: absolute;
+      background: #0b8;
+      left: 5px;
+      top: 12px;
+      border-radius: 100%;
+      -ms-border-radius: 100%;
+      -moz-border-radius: 100%;
+      -webkit-border-radius: 100%;
+    }
+    &:after {
+      content: "";
+      width: 15px;
+      height: 15px;
+      border: 1px solid #999;
       position: absolute;
       left: 0;
-      top: 50%;
-      transform: translateY(-44%);
+      top: 7px;
+      border-radius: 100%;
+      -ms-border-radius: 100%;
+      -moz-border-radius: 100%;
+      -webkit-border-radius: 100%;
+      box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
     }
   }
 
