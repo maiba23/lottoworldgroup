@@ -158,7 +158,7 @@ const CartPage = () => {
   console.log("disabled = ", disabled);
   return (
     <Layout>
-      <main id="main" className="clearfix">
+      <main>
         <ModalDialog
           show={modal}
           header={"Confirm"}
@@ -188,16 +188,18 @@ const CartPage = () => {
             </button>
           }
         />
+        <div className="bg-inner mt-b-20">
+          <div className="hadding inner-hadding customheader">
+            <div className="wrap">
+              <h1>Your order</h1>
+            </div>
+          </div>
+        </div>
         <div className="wrap">
           <div
             id="middle"
             className="innerbg innerbg_select_page singleresult cart-page"
           >
-            <div className="banner_txt">
-              <div className="hadding">
-                <h1>Your order</h1>
-              </div>
-            </div>
             <div className="cart-wrapper">
               <div className="cart-page">
                 <div className="cart-static">

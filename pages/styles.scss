@@ -929,8 +929,7 @@ a.playNowBtn {
       }
 
       & > span {
-        font-size: 24px;
-        color: $color-white;
+        font-size: 22px;
         padding: 1%;
       }
     }
@@ -948,18 +947,13 @@ a.playNowBtn {
 
         & > span {
           font-size: 16px;
-          color: $color-white;
           padding: 1%;
         }
       }
     }
 
     & .products {
-      background: linear-gradient(
-        180deg,
-        $color-background 0%,
-        $color-darkbg 100%
-      );
+      background: linear-gradient(180deg, #223663 0%, #162d5a 100%);
       box-shadow: 0px 2px 4px $color-black,
         inset 0px 0.51px 0px rgb(255 255 255 / 30%);
       border-radius: 3px;
@@ -1075,6 +1069,7 @@ a.playNowBtn {
 
         & .price {
           font-size: 22px;
+          font-weight: bold;
           color: $color-primary-hover;
           text-shadow: 0px 6px 16px rgb(19 209 156 / 35%);
         }
@@ -1129,7 +1124,7 @@ a.playNowBtn {
     display: flex;
     align-items: center;
     padding: 16px 0;
-
+    background-color: #f1f1f1;
     & .holder {
       width: 66%;
     }
@@ -1140,12 +1135,13 @@ a.playNowBtn {
 
     & .label {
       font-size: 22px;
-      color: $color-white;
+      color: #111724;
     }
 
     & .value {
-      color: $color-primary-hover;
+      color: #0169b2;
       font-size: 28px;
+      font-weight: bold;
     }
 
     @media screen and (max-width: 1024px) {
@@ -1169,11 +1165,12 @@ a.playNowBtn {
     padding: 24px;
     align-items: center;
     height: 96px;
-
+    background-color: #f1f1f1;
     & .title {
       flex-grow: 1;
       font-size: 22px;
-      color: $color-white;
+      font-weight: bold;
+      color: #0169b2;
     }
 
     & .ticker-select {
@@ -1181,7 +1178,6 @@ a.playNowBtn {
       min-width: 120px;
 
       & select {
-        padding: 10px;
         width: 100%;
 
         &:after {
@@ -1209,11 +1205,11 @@ a.playNowBtn {
 
       & > input {
         background: #13d19c;
-        border-radius: 4px;
+        border-radius: 9px;
         border: none;
         font-size: 18px;
         color: $color-white;
-        padding: 16px 32px;
+        padding: 10px 20px;
         width: 100%;
         max-width: 100%;
         height: auto;
