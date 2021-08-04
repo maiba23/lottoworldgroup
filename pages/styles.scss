@@ -28,7 +28,7 @@ a.disabled {
   color: $color-white;
 
   &:hover {
-    background-color: $color-primary-hover;
+    background-color: $color-primary;
   }
 }
 
@@ -64,7 +64,7 @@ a.disabled {
     display: flex;
     flex-direction: column;
     font-weight: 400;
-
+    pointer-events: unset;
     & .modal-header {
       font-size: 20px;
       font-weight: 600;
@@ -617,7 +617,7 @@ img {
       .wrap-top-menu
       li:not(.has-child.mobile-menu):not(.header_mobile_menu_bitcoin_values_part):hover
       a {
-      background: $color-primary-hover;
+      background: #54daaf;
     }
 
     &
@@ -2190,7 +2190,7 @@ a.playNowBtn {
     font-size: 24px;
     font-family: "Signikabold";
     text-shadow: 1px 1px 4px rgb(0 0 0 / 42%);
-    color: #fff;
+    color: $color-primary;
     line-height: 60px;
   }
 
@@ -2397,11 +2397,11 @@ a.playNowBtn {
   & button.link-button {
     background-color: transparent !important;
     border: none !important;
-    color: $color-white !important;
+    color: $color-primary !important;
     text-align: center !important;
     font-weight: 500;
     font-size: 18px;
-
+    text-decoration: underline;
     &:hover {
       color: $color-primary-hover !important;
     }
@@ -2626,4 +2626,30 @@ a.playNowBtn {
 }
 .oro-fill-width {
   width: -webkit-fill-available;
+}
+.modal-background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: -moz-box;
+  display: flex;
+  -moz-box-pack: center;
+  justify-content: center;
+  -moz-box-align: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+}
+.shares-draws {
+  color: $color-primary;
+}
+.total-label {
+  color: $color-primary;
+  font-weight: bold;
+  font-size: 18px;
+}
+.total-price {
+  font-weight: bold;
 }

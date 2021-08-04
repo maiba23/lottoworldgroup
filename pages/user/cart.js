@@ -156,6 +156,7 @@ const CartPage = () => {
 
   const disabled = !status?.price || !status?.typeId;
   console.log("disabled = ", disabled);
+  console.log(modal);
   return (
     <Layout>
       <main>

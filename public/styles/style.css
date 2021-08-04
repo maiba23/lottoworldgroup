@@ -8364,6 +8364,14 @@ input.css-checkbox[type="radio"] + label.css-label.clr {
     width: 100%;
   }
 }
+@media screen and (max-width: 1080px) {
+  .group-ticket-section .body-section {
+    flex-wrap: wrap;
+  }
+  .group-ticket-section .body-section .body-left img {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 320px) {
   .ttl_share_lab {
     width: 180px;
@@ -11288,15 +11296,20 @@ span.bin.oro-bonus-money {
   align-items: center;
   justify-content: space-between;
 }
+.group-ticket-section .body-section .body-left {
+  display: flex;
+  width: 100%;
+}
 .group-ticket-section .body-section .body-right {
-  margin-right: 20px;
   border-radius: 3px;
   border: 1px solid #e0e0e0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 20px 25px;
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
+  margin: 20px;
 }
 .group-ticket-section .body-section .body-right .title {
   color: #0169b2;

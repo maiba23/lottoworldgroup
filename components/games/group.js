@@ -14,7 +14,7 @@ const GroupGame = (props) => {
   const [showLines, setShowLines] = useState(false);
   const dispatch = useDispatch();
   const router = useRouter();
-
+  console.log(option);
   const handleLinesChange = (e) => {
     setShares(parseInt(e.target.value) === NaN ? 1 : parseInt(e.target.value));
   };
