@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { ProtectedRoute } from "../custom/guards";
 import Transition from "../custom/transition";
-import "nprogress/nprogress.css"; //styles of nprogress
+import "nprogress/nprogress.css";
 import { Provider } from "react-redux";
 import IdleLogout from "./_idle";
 import configureStore from "../store";
 import "./styles.scss";
 
-// This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
   const [store, setStore] = useState(null);
 

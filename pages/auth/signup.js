@@ -120,97 +120,91 @@ const SignupPage = () => {
     !busy;
   return (
     <Layout>
-      <main className={styles.container}>
-        <form className={styles.form}>
-          {busy && <div className="simple-spinner"></div>}
-          <Link href="/">
-            <a className={styles.close}></a>
-          </Link>
-          <h1>Welcome</h1>
-          {error && <section className="error-msg">{error}</section>}
-          <section className={styles.inputGroup}>
+      <form className={styles.form}>
+        {busy && <div className="simple-spinner"></div>}
+        <Link href="/">
+          <a className={styles.close}></a>
+        </Link>
+        <h1>Welcome</h1>
+        {error && <section className="error-msg">{error}</section>}
+        <section className={styles.inputGroup}>
+          <Input
+            id="email"
+            name="email"
+            type="text"
+            value={email.value}
+            onChange={handleEmailChange}
+            placeholder="Email Address"
+            style={{ padding: "16px 24px" }}
+            error={email.error}
+          />
+          <div className={styles.flnameInput}>
             <Input
-              id="email"
-              name="email"
+              id="fname"
+              name="fname"
               type="text"
-              value={email.value}
-              onChange={handleEmailChange}
-              placeholder="Email Address"
+              value={firstName.value}
+              onChange={handleFnameChange}
+              placeholder="First name"
               style={{ padding: "16px 24px" }}
-              error={email.error}
-            />
-            <div className={styles.flnameInput}>
-              <Input
-                id="fname"
-                name="fname"
-                type="text"
-                value={firstName.value}
-                onChange={handleFnameChange}
-                placeholder="First name"
-                style={{ padding: "16px 24px" }}
-                error={firstName.error}
-              />
-              <Input
-                id="lname"
-                name="lname"
-                type="text"
-                value={lastName.value}
-                onChange={handleLnameChange}
-                placeholder="Last name"
-                style={{ padding: "16px 24px" }}
-                error={lastName.error}
-              />
-            </div>
-            <Input
-              id="password"
-              name="password"
-              type="password"
-              value={password.value}
-              onChange={handlePasswordChange}
-              placeholder="Password"
-              style={{ padding: "16px 24px" }}
-              error={email.error}
+              error={firstName.error}
             />
             <Input
-              id="phone"
-              name="phone"
-              type="phone"
-              value={phone.value}
-              onChange={handlePhoneChange}
-              placeholder="Phone Number (optional)"
-              style={{ padding: "16px 24px" }}
-              error={phone.error}
-            />
-            <Input
-              id="address"
-              name="bch-address"
+              id="lname"
+              name="lname"
               type="text"
-              value={address.value}
-              placeholder="BCH address (optional)"
-              onChange={handleAddressChange}
+              value={lastName.value}
+              onChange={handleLnameChange}
+              placeholder="Last name"
               style={{ padding: "16px 24px" }}
-              error={address.error}
+              error={lastName.error}
             />
-          </section>
-          <section className={styles.actionGroup}>
-            <Button
-              className="submit"
-              onClick={handleSubmit}
-              disabled={!enable}
-            >
-              Sign up
-            </Button>
-          </section>
-          <section className={styles.actionLinks}>
-            <span>
-              Have an account?
-              <Link href="/auth/login">
-                <a className={styles.link}>&nbsp;Log in</a>
-              </Link>
-            </span>
-          </section>
-        </form>
-      </main>
+          </div>
+          <Input
+            id="password"
+            name="password"
+            type="password"
+            value={password.value}
+            onChange={handlePasswordChange}
+            placeholder="Password"
+            style={{ padding: "16px 24px" }}
+            error={email.error}
+          />
+          <Input
+            id="phone"
+            name="phone"
+            type="phone"
+            value={phone.value}
+            onChange={handlePhoneChange}
+            placeholder="Phone Number (optional)"
+            style={{ padding: "16px 24px" }}
+            error={phone.error}
+          />
+          <Input
+            id="address"
+            name="bch-address"
+            type="text"
+            value={address.value}
+            placeholder="BCH address (optional)"
+            onChange={handleAddressChange}
+            style={{ padding: "16px 24px" }}
+            error={address.error}
+          />
+        </section>
+        <section className={styles.actionGroup}>
+          <Button className="submit" onClick={handleSubmit} disabled={!enable}>
+            Sign up
+          </Button>
+        </section>
+        <section className={styles.actionLinks}>
+          <span>
+            Have an account?
+            <Link href="/auth/login">
+              <a className={styles.link}>&nbsp;Log in</a>
+            </Link>
+          </span>
+        </section>
+      </form>
     </Layout>
   );
 };

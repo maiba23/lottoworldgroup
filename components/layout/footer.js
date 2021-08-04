@@ -65,7 +65,7 @@ const Footer = () => {
                       id="menu-item-1390"
                       className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1390"
                     >
-                      <Link href="/megamillions-lottery">
+                      <Link href="/lotteries/megamillions">
                         Play MegaMillions
                       </Link>
                     </li>
@@ -74,13 +74,13 @@ const Footer = () => {
                       id="menu-item-1392"
                       className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1392"
                     >
-                      <Link href="/powerball-lottery">Play PowerBall</Link>
+                      <Link href="/lotteries/powerball">Play PowerBall</Link>
                     </li>
                     <li
                       id="menu-item-1389"
                       className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1389"
                     >
-                      <Link href="/lotto649-lottery">Play Lotto649</Link>
+                      <Link href="/lotteries/lotto649">Play Lotto649</Link>
                     </li>
                   </ul>
                 </div>

@@ -1314,7 +1314,6 @@ table.tablesorterinfo tfoot tr th {
   font-weight: 600;
 }
 table.tablesorter thead tr .header {
-  background-image: url(../../images/asc_wht.png);
   background-repeat: no-repeat;
   background-position: center right 10px;
   cursor: pointer;
@@ -10412,13 +10411,13 @@ input:focus {
 }
 .play-in-group-section .banner-buy-btn {
   position: absolute;
-  font-size: 30px;
+  font-size: 23px;
   left: 30px;
   top: 400px;
   color: #fff;
   background-color: #13d19c;
   min-width: 180px;
-  padding: 12px;
+  padding: 10px;
   text-align: center;
   border-radius: 4px;
 }

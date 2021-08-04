@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import Layout from "../../components/layout";
 import GroupGame from "../../components/games/group";
@@ -72,17 +71,6 @@ const GroupLotto = (props) => {
                   <img className="icon" src="/images/step3-icon.png" />
                   <div className="text">Click continue</div>
                 </div>
-              </div>
-              <div className="desktop-ticket-buttons">
-                <Link
-                  href={`/lotteries/${data.LotteryName.replace(
-                    / /g,
-                    ""
-                  ).toLowerCase()}`}
-                  id="person-ticket-button"
-                >
-                  <a className="person-ticket-button">Person ticket</a>
-                </Link>
               </div>
             </div>
             <div className={`beton-header ${data.LotteryName}`}>

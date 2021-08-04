@@ -79,69 +79,63 @@ const LoginPage = () => {
     email.value.length;
   return (
     <Layout>
-      <main className={styles.container}>
-        <form className={styles.form} method="post" target="#here">
-          {busy && <div className="simple-spinner"></div>}
-          <Link href="/">
-            <a className={styles.close}></a>
-          </Link>
-          <h1>Log in with your account</h1>
-          {error && <section className="error-msg">{error}</section>}
-          <section className={styles.inputGroup}>
-            <Input
-              id="email"
-              name="email"
-              type="text"
-              value={email.value}
-              onChange={handleEmailChange}
-              placeholder="Email Address"
-              style={{ padding: "16px 24px" }}
-              error={email.error}
-            />
-            <Input
-              id="password"
-              name="password"
-              type="password"
-              value={password.value}
-              onChange={handlePasswordChange}
-              placeholder="Password"
-              style={{ padding: "16px 24px" }}
-              error={password.error}
-            />
-            <CheckBox
-              id="remember"
-              name="remember"
-              type="checkbox"
-              value={remember}
-              onChange={handleRememberChange}
-            >
-              Remember Me
-            </CheckBox>
+      <form className={styles.form} method="post" target="#here">
+        {busy && <div className="simple-spinner"></div>}
+        <Link href="/">
+          <a className={styles.close}></a>
+        </Link>
+        <h1>Log in with your account</h1>
+        {error && <section className="error-msg">{error}</section>}
+        <section className={styles.inputGroup}>
+          <Input
+            id="email"
+            name="email"
+            type="text"
+            value={email.value}
+            onChange={handleEmailChange}
+            placeholder="Email Address"
+            style={{ padding: "16px 24px" }}
+            error={email.error}
+          />
+          <Input
+            id="password"
+            name="password"
+            type="password"
+            value={password.value}
+            onChange={handlePasswordChange}
+            placeholder="Password"
+            style={{ padding: "16px 24px" }}
+            error={password.error}
+          />
+          <CheckBox
+            id="remember"
+            name="remember"
+            type="checkbox"
+            value={remember}
+            onChange={handleRememberChange}
+          >
+            Remember Me
+          </CheckBox>
+        </section>
+        <section className={styles.actionGroup}>
+          <Button className="submit" onClick={handleSubmit} disabled={!enable}>
+            Log in
+          </Button>
+          <section className={styles.actionLinks}>
+            <Link href="/auth/reset-password">
+              <a className={styles.link}>Forgot password?</a>
+            </Link>
           </section>
-          <section className={styles.actionGroup}>
-            <Button
-              className="submit"
-              onClick={handleSubmit}
-              disabled={!enable}
-            >
-              Log in
-            </Button>
-            <section className={styles.actionLinks}>
-              <Link href="/auth/reset-password">
-                <a className={styles.link}>Forgot password?</a>
+          <div>
+            <span>
+              Don't have an account?{" "}
+              <Link href="/auth/signup">
+                <a className={styles.link}>Sign up here!</a>
               </Link>
-            </section>
-            <div>
-              <span>
-                Don't have an account?{" "}
-                <Link href="/auth/signup">
-                  <a className={styles.link}>Sign up here!</a>
-                </Link>
-              </span>
-            </div>
-          </section>
-        </form>
-      </main>
+            </span>
+          </div>
+        </section>
+      </form>
     </Layout>
   );
 };
