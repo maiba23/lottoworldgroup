@@ -3465,9 +3465,6 @@ h3 span {
 #dispclock tbody tr:nth-of-type(2) td {
   padding-left: 50px;
 }
-.tabin_main {
-  display: flex;
-}
 .tabin_main_group {
   width: 98%;
   padding-right: 2%;
@@ -6787,6 +6784,9 @@ input.css-checkbox[type="radio"] + label.css-label.clr {
   .how-to-play {
     display: none;
   }
+  .desktop-ticket-buttons {
+    display: none !important;
+  }
   /* .mid_buttons {display: block;} */
   .mid_buttons2 {
     display: none;
@@ -6939,7 +6939,7 @@ input.css-checkbox[type="radio"] + label.css-label.clr {
     \* ------------------------------------------------------------ */
 
   .lotto-owl-slider .slide {
-    width: 95% !important;
+    width: 90% !important;
   }
   #info-page-wrap .banner_txt .hadding {
     left: 0px;

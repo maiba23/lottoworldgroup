@@ -25,10 +25,10 @@ const CartPage = () => {
 
   const handleOrder = useCallback(
     (e) => {
-      if (!enoughBalance && currency === "") {
-        setAlert(true);
-        return;
-      }
+      // if (!enoughBalance && currency === "") {
+      //   setAlert(true);
+      //   return;
+      // }
 
       setModal(true);
     },
@@ -238,7 +238,7 @@ const CartPage = () => {
               </div>
               <div className="cart-actions">
                 <div className="title">CHECKOUT</div>
-                {balance?.AccountBalance > status.price ? null : (
+                {/* {balance?.AccountBalance > status.price ? null : (
                   <div className="ticker-select">
                     <select
                       id="ticker-select"
@@ -255,7 +255,7 @@ const CartPage = () => {
                       ))}
                     </select>
                   </div>
-                )}
+                )} */}
                 <div className="action">
                   <input
                     type="button"

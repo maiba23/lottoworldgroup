@@ -176,7 +176,7 @@ const SignupPage = () => {
             type="phone"
             value={phone.value}
             onChange={handlePhoneChange}
-            placeholder="Phone Number (optional)"
+            placeholder="Phone Number"
             style={{ padding: "16px 24px" }}
             error={phone.error}
           />

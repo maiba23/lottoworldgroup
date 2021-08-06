@@ -81,8 +81,7 @@ const WithdrawPage = () => {
         body={"Email sent. Please wait for a sec"}
         footer={
           <button onClick={() => setModal(false)} className="btn btn-primary">
-            {" "}
-            OK{" "}
+            OK
           </button>
         }
       />
@@ -90,23 +89,21 @@ const WithdrawPage = () => {
       <div className="bg-inner mt-b-20">
         <div className="hadding inner-hadding customheader">
           <div className="wrap">
-            <h1>Withdraw money</h1>
+            <h1>WITHDRAW MONEY FROM YOUR ACCOUNTy</h1>
           </div>
         </div>
       </div>
       <div className="wrap">
         <div className="widthdrawpage">
-          <h2 className="deposit_subtitle">
-            Withdraw Your Winnings and Account Balance
-          </h2>
           <div className="withdrawexplanation">
             <div className="widthdrawinnercontainer">
               <p>
                 <span id="ContentPlaceHolder1_Label2">
-                  At any time you may ask to withdraw your winnings and your
-                  account’s balance. After requesting to withdraw, Your
-                  withdrawal request will be processed within 48 hours. Please
-                  make sure your contact details are fully updated.
+                  Please send us a mail to{" "}
+                  <a href="mailto:support@qiwilotto.com">
+                    support@qiwilotto.com
+                  </a>{" "}
+                  and specify the amount you want to withdraw.
                 </span>
               </p>
             </div>

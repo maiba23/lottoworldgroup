@@ -16,10 +16,7 @@ export default function LotteryPage({ lotteries }) {
           <div id="middle" className="innerbg view-all-lottery">
             <div className="innerpage">
               <div className="all-lot-title">
-                <h1>
-                  Purchase Your Official Lottery Tickets Using Your BCH and BTC
-                  Account
-                </h1>
+                <h1>Purchase Your Official Lottery Tickets:</h1>
               </div>
               <div className="allresult_table">
                 <table

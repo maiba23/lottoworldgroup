@@ -18,9 +18,7 @@ const Support = () => (
         <p>Phone CY : +35 725 030 326 Monday to Friday, 8am to 8pm, EET</p>
         <p>
           E-mail to:{" "}
-          <a href="mailto:support@lottoworldgroup.com">
-            support@lottoworldgroup.com
-          </a>
+          <a href="mailto:support@qiwilotto.com">support@qiwilotto.com</a>
           <br />
           <br />
         </p>
@@ -28,10 +26,7 @@ const Support = () => (
           I AM A SUBSCRIBER AND WOULD LIKE TO CANCEL MY SUBSCRIPTION. HOW DO I
           CANCEL IT? The Subscriber may cancel the subscription by sending an
           email to that effect to{" "}
-          <a href="mailto:support@lottoworldgroup.com">
-            support@lottoworldgroup.com
-          </a>
-          .
+          <a href="mailto:support@qiwilotto.com">support@qiwilotto.com</a>.
         </p>
       </div>
     </div>

@@ -145,32 +145,18 @@ const DepositPage = () => {
       <div className="bg-inner mt-b-20">
         <div className="hadding inner-hadding customheader">
           <div className="wrap">
-            <h1>Deposit cash to your wallet</h1>
+            <h1>DEPOSIT MONEY TO YOUR ACCOUNT</h1>
           </div>
         </div>
       </div>
       <div className="wrap">
         <div className="widthdrawpage">
-          <h2 className="deposit_subtitle">
-            The <span className="text-primary">LWD</span>
-            &nbsp;supports 20 different types of cryptocurrencies
-          </h2>
-          <div className="withdrawexplanation">
-            <div className="widthdrawinnercontainer">
-              <p>
-                Directly deposit cryptocurrency to your&nbsp;
-                <span className="text-primary">LWD</span>&nbsp; wallet
-                <br />
-                You set the amount you want to deposit, all amounts are defined
-                in a Euro format
-              </p>
-            </div>
-          </div>
           <div className="widthdrawmoneydown">
             <div className="widthdrawmoneydowninner">
               <p className="deposit_amount-description">
-                Once funds are deposited into your personal wallet, you can play
-                lotto as freely as you want.
+                Upon receiving your funds to your account on QIWI LOTTO, you
+                will be able to buy and play the international official
+                lotteries as you want.
               </p>
               <div className="widthdrawmoneydowninnerwrapper">
                 <div className="howmuchwuthdrawtext">

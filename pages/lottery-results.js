@@ -96,23 +96,6 @@ export default function LotteryResultsPage({ results }) {
                 </table>
               </div>
               <div className="clear_inner">&nbsp;</div>
-              <div className="results-page">
-                <h1>Real-Time Results !</h1>
-                <p>
-                  <span className="text-primary">Bitcoin</span>
-                  <span className="text-secondary">Lotterys.com</span> provides
-                  players with a variety of lotteries from around the world.
-                </p>
-                <p>
-                  With <span className="text-primary">Bitcoin</span>
-                  <span className="text-secondary">Lotterys.com</span>, your
-                  lottery results online are just a click away, at any time and
-                  any place. As long as you have internet access to a computer
-                  or a mobile, checking lottery results is now as easy as one
-                  click of your mouse.
-                </p>
-                <h1></h1>
-              </div>
             </div>
           </div>
         </div>

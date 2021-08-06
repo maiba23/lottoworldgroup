@@ -60,17 +60,6 @@ const LottoGame = (props) => {
           <div id="middle" className="lotterydetail">
             <div className="flex-container">
               <HowtoPlay />
-              {/* {lotto !== "megajackpot" && lotto !== "btcpowerplay" && (
-                <div className="desktop-ticket-buttons">
-                  <a
-                    href={`/groups/${lotto}`}
-                    className="group-ticket-button"
-                    id="group-ticket-button"
-                  >
-                    Group ticket
-                  </a>
-                </div>
-              )} */}
             </div>
             <div className={`beton-header ${data.LotteryName}`}>
               <GameHeader

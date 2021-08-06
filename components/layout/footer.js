@@ -26,29 +26,6 @@ const Footer = () => {
                     </li>
                   </ul>
                 </div>
-                <div className="socialicons2">
-                  <a href="https://www.pinterest.com/#" target="_blank">
-                    <img
-                      src="/images/pininterest_ico2.png"
-                      alt="lwg on Pinterest"
-                      style={{ visibility: "visible" }}
-                    />
-                  </a>
-                  <a href="https://www.facebook.com/pages/#" target="_blank">
-                    <img
-                      src="/images/facebook_ico2.png"
-                      alt="lwg FaceBook page"
-                      style={{ visibility: "visible" }}
-                    />
-                  </a>
-                  <a href="https://twitter.com/#" target="_blank">
-                    <img
-                      src="/images/twitter_ico2.png"
-                      alt="follow lwg on twitter"
-                      style={{ visibility: "visible" }}
-                    />
-                  </a>
-                </div>
               </ul>
               <ul>
                 <li>
@@ -92,26 +69,19 @@ const Footer = () => {
                   </a>
                 </li>
                 <div className="contactus-pic">
-                  <a href="">
+                  <a href="/">
                     <img
                       src="/images/chat_icon.png"
                       style={{ visibility: "visible" }}
                     />
                     Live Chat
                   </a>
-                  <a href="mailto:support@lottoworldgroup.com">
+                  <a href="mailto:support@qiwilotto.com">
                     <img
                       src="/images/mail_icon.png"
                       style={{ visibility: "visible" }}
                     />
                     Write Us
-                  </a>
-                  <a href="">
-                    <img
-                      src="/images/phone_icon.png"
-                      style={{ visibility: "visible" }}
-                    />
-                    +35 725 030 326
                   </a>
                 </div>
               </ul>
@@ -138,36 +108,22 @@ const Footer = () => {
             </div>
             <div className="footerpayments inline">
               <img
-                src="/images/300px-Neteller_Footer.png"
-                alt="Neteller payment"
+                src="/images/btc.png"
+                alt="BTC"
                 style={{ visibility: "visible" }}
               />
             </div>
             <div className="footerpayments inline">
               <img
-                src="/images/Skrill_primary_logo_Footer.png"
-                alt="Skrill payment"
+                src="/images/bch.png"
+                alt="BCH"
                 style={{ visibility: "visible" }}
               />
             </div>
             <div className="footerpayments inline">
               <img
-                src="/images/wmlogo_vector_blue_Footer.png"
-                alt="webmoney payment"
-                style={{ visibility: "visible" }}
-              />
-            </div>
-            <div className="footerpayments inline">
-              <img
-                src="/images/logobar-ideal_Footer.png"
-                alt="ideal payment"
-                style={{ visibility: "visible" }}
-              />
-            </div>
-            <div className="footerpayments inline">
-              <img
-                src="/images/logobar-sofort_Footer.png"
-                alt="sofort payment"
+                src="/images/usdt.png"
+                alt="USDT"
                 style={{ visibility: "visible" }}
               />
             </div>
@@ -187,19 +143,10 @@ const Footer = () => {
         <div className="copyright">
           <p>
             <Link href="/" target="_blank">
-              www.lottoworldgroup.com
+              www.qiwilotto.com
             </Link>
             &nbsp;
-            <span id="Label17">
-              is owned and operated by LWGL Lotto World Group Ltd.
-            </span>
-          </p>
-          <p>
-            <span id="address">
-              Our office is located at 89 Kennedy Avenue, Frigogel Building, 1st
-              floor, Office 105 P.C. 1077 Nicosia, Cyprus, company registration
-              number HE340709
-            </span>
+            <span id="Label17">is owned and operated by QIWI LOTTO GROUP.</span>
           </p>
         </div>
       </div>

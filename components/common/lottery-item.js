@@ -14,12 +14,15 @@ const LotteryItem = (props) => {
       data-number={`${id}`}
     >
       <div className="teaserBox">
-        <div className="content">
-          <img
-            src={image}
-            style={{ width: "80px", float: "right", visibility: "visible" }}
-          />
-          <div className="lottoLabel">{name}</div>
+        <div
+          className="content"
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+            alignItems: "center",
+          }}
+        >
+          <img src={image} style={{ width: "100px", height: "100px" }} />
           <div className="jackpot">{`${unit} ${formatNumber(amount)}`}</div>
         </div>
         <div className="footer">

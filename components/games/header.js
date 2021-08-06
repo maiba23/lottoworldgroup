@@ -11,11 +11,7 @@ export const GameHeader = (props) => {
         <span className="lotto-name">{name}</span>
       </div>
       <div className="lotto-prize-container">
-        <h1 className="lotto-prize">
-          {jackpot}
-          <br />
-          Win BTC
-        </h1>
+        <h1 className="lotto-prize">{jackpot}</h1>
       </div>
       <div className="lotto-timer">
         {drawDate ? <CountDown drawDate={drawDate} /> : <AutoCountDown />}
