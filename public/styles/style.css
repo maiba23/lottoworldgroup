@@ -40,6 +40,7 @@ a:hover {
 }
 main {
   width: 100%;
+  margin-top: 80px;
 }
 hr {
   background-color: #e1e1e1;
@@ -2459,7 +2460,6 @@ a.banner-buy-btn:hover {
   background-size: cover;
 }
 .main-content {
-  min-height: 250px;
   padding: 10px 0;
   margin-bottom: 25px;
 }
@@ -6846,7 +6846,6 @@ input.css-checkbox[type="radio"] + label.css-label.clr {
     width: 100%;
   }
   .slider_content {
-    top: 100px;
     width: 100% !important;
     max-width: 1000px;
   }
@@ -7501,9 +7500,7 @@ input.css-checkbox[type="radio"] + label.css-label.clr {
     color: #000;
     background-color: #f3f3f3;
   }
-  .slider_content {
-    top: 100px;
-  }
+
   .slider_content .slide2buy {
     left: 35%;
   }
@@ -7963,9 +7960,6 @@ input.css-checkbox[type="radio"] + label.css-label.clr {
   }
   .card_form {
     width: 100%;
-  }
-  .slider_content {
-    top: 40px;
   }
   .slider_content .slide2 h3 {
     font-size: 25px;

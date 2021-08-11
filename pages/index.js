@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import Head from "next/head";
 import Link from "next/link";
-import Hero from "../components/common/hero";
+// import Hero from "../components/common/hero";
 import Layout from "../components/layout";
 import LotteryList from "../components/common/lottery-list";
 import PlayGroup from "../components/home/play-group";
@@ -13,10 +13,12 @@ import { ModalDialog } from "../components/dialog";
 import { getUserBySysSessionId } from "../service/client/user";
 import { getAllDraws, getResultsByBrand } from "../service/globalinfo";
 import { parseXmlFile } from "../helpers/xml";
+import { parseJsonFile } from "../helpers/json";
 import SecurityGroup from "../components/home/security-group";
+import Banner from "../components/common/banner";
 
 export default function Home(props) {
-  const { lotteries, results } = props;
+  const { banners, lotteries, results } = props;
   const dispatch = useDispatch();
   const router = useRouter();
   const { sysSessionID } = router.query;
@@ -65,7 +67,8 @@ export default function Home(props) {
           }
         />
         {/* hero */}
-        <Hero lottery={lotteries[0]} />
+        {/* <Hero lottery={lotteries[0]} /> */}
+        <Banner banners={banners} lottery={lotteries[0]} />
         <div className="clear"></div>
 
         {/* lottery list */}
@@ -100,6 +103,8 @@ export default function Home(props) {
 }
 
 export const getStaticProps = async (ctx) => {
+  const banners = await parseJsonFile("data/banners.json");
+
   try {
     const res = await Promise.all([
       getAllDraws(),
@@ -224,6 +229,7 @@ export const getStaticProps = async (ctx) => {
 
     return {
       props: {
+        banners: banners.items,
         lotteries,
         exlottos,
         raffles,
@@ -235,6 +241,7 @@ export const getStaticProps = async (ctx) => {
     console.log(error);
     return {
       props: {
+        banners: banners.items,
         lotteries: [],
         exlottos: [],
         results: [],

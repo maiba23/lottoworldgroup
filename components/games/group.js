@@ -62,6 +62,7 @@ const GroupGame = (props) => {
         draws,
         productId: 3,
         picks: "",
+        ticketType: "group",
       })
     );
   };

@@ -45,6 +45,7 @@ const SingleGame = ({ data, selMs, selEs }) => {
             data.AmountOfMainNumbersToMatch,
             data.AmountOfExtraNumbersToMatch
           ),
+          ticketType: "single",
         })
       );
 

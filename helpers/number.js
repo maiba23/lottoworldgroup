@@ -1,13 +1,11 @@
 export const formatNumber = (num) => {
-  if (num > 99999999) {
-    return (
-      Math.sign(num) * (Math.abs(num) / 1000000000).toFixed(1) + " Billion"
-    );
-  } else if (num > 99999) {
-    return Math.sign(num) * (Math.abs(num) / 1000000).toFixed(1) + " Million";
-  } else if (num > 999) {
-    return Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + " Kilo";
-  } else return num;
+  return Math.abs(num) >= 1.0e9
+    ? Math.round((Math.abs(num) / 1.0e9) * 10) / 10 + "B"
+    : Math.abs(num) >= 1.0e6
+    ? Math.round((Math.abs(num) / 1.0e6) * 10) / 10 + "M"
+    : Math.abs(num) >= 1.0e3
+    ? Math.round((Math.abs(num) / 1.0e3) * 10) / 10 + "K"
+    : Math.abs(num);
 };
 
 export const numberWithLength = (num, len) => {

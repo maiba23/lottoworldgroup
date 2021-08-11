@@ -70,6 +70,7 @@ a.disabled {
       font-weight: 600;
       background-color: #eee;
       display: flex;
+      justify-content: unset;
       border-bottom: 1px solid rgba(0, 0, 0, 0.3);
       padding: 16px;
     }
@@ -107,7 +108,6 @@ a.disabled {
 
 #main {
   margin-top: 80px;
-  margin-bottom: 64px;
   padding: 0px;
 
   & p {
@@ -2652,4 +2652,24 @@ a.playNowBtn {
 }
 .total-price {
   font-weight: bold;
+}
+.owl-nav,
+.owl-dots {
+  display: none;
+}
+#banner {
+  position: relative;
+}
+.phoenix-feather {
+  position: absolute;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  right: 0;
+}
+.lotto-owl-slider {
+  margin-top: 25px;
 }

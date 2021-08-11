@@ -95,33 +95,18 @@ const WithdrawPage = () => {
       </div>
       <div className="wrap">
         <div className="widthdrawpage">
-          <div className="withdrawexplanation">
-            <div className="widthdrawinnercontainer">
-              <p>
-                <span id="ContentPlaceHolder1_Label2">
-                  Please send us a mail to{" "}
-                  <a href="mailto:support@qiwilotto.com">
-                    support@qiwilotto.com
-                  </a>{" "}
-                  and specify the amount you want to withdraw.
-                </span>
-              </p>
-            </div>
-          </div>
           <div className="widthdrawmoneyup">
             <div className="widthdrawmoneyupinner">
               <div className="widthdrawinnercontainer">
-                <h2>
-                  <span id="ContentPlaceHolder1_Label3">
-                    Withdraw Your Money:
-                  </span>
-                </h2>
                 <p>
                   <span id="ContentPlaceHolder1_Label4">
                     On your account (Winnings &amp; Balance) you have an overall
                     amount of:{" "}
                   </span>
-                  <span id="ContentPlaceHolder1_real_money">
+                  <span
+                    id="ContentPlaceHolder1_real_money"
+                    style={{ textDecoration: "underline" }}
+                  >
                     €&nbsp;
                     {(balance
                       ? balance.AccountBalance + balance.WinningAmount
@@ -129,7 +114,21 @@ const WithdrawPage = () => {
                     ).toFixed(2)}
                   </span>
                 </p>
-                <p>
+                <div className="withdrawexplanation">
+                  <div className="widthdrawinnercontainer">
+                    <p>
+                      <span id="ContentPlaceHolder1_Label2">
+                        Please send us a mail to{" "}
+                        <a href="mailto:support@qiwilotto.com">
+                          support@qiwilotto.com
+                        </a>{" "}
+                        and specify the amount you want to withdraw and your
+                        wallet address where you want to receive your money.
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                {/* <p>
                   <span>Enter your Wallet Address </span>
                   <input
                     className="withdraw_wallet-address-input"
@@ -138,11 +137,11 @@ const WithdrawPage = () => {
                     value={address}
                     onChange={addressChange}
                   />
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
-          <div className="widthdrawmoneydown">
+          {/* <div className="widthdrawmoneydown">
             <div className="widthdrawmoneydowninner">
               <div className="widthdrawmoneydowninnerwrapper">
                 <div className="howmuchwuthdrawtext">
@@ -199,7 +198,7 @@ const WithdrawPage = () => {
               <div className="myaccount_detail_error"></div>
               <div className="myaccount_detail_success"></div>
             </div>
-          </div>
+          </div> */}
           <div className="myaccount_detail_error">{error}</div>
         </div>
       </div>

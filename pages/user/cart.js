@@ -1,13 +1,15 @@
 import React, { useState, useCallback } from "react";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import Layout from "../../components/layout";
 import { ModalDialog } from "../../components/dialog";
-import { currencies } from "../../helpers/constants";
+// import { currencies } from "../../helpers/constants";
 import { confirmOrder, confirmOrderFireGame } from "../../service/client/order";
+import { balanceCheck } from "../../helpers/balance";
 
 const CartPage = () => {
-  const [currency, setCurrency] = useState("");
+  // const [currency, setCurrency] = useState("");
   const [error, setError] = useState("");
   const status = useSelector((state) => state.game);
   const balance = useSelector((state) => state.user.balance);
@@ -15,29 +17,31 @@ const CartPage = () => {
   const [modal, setModal] = useState(false);
   const [alert, setAlert] = useState(false);
   const router = useRouter();
-
-  const enoughBalance = balance?.AccountBalance > status.price;
+  const enoughBalance = balanceCheck(
+    balance?.AccountBalance,
+    balance?.BonusAmount,
+    status.price,
+    status.ticketType
+  );
   const isBTCPowerPlay = status.name === "BTC Power Play";
-  const handleCurrency = useCallback((e) => {
-    setCurrency(e.target.value);
-    setError("");
-  }, []);
+  // const handleCurrency = useCallback((e) => {
+  //   setCurrency(e.target.value);
+  //   setError("");
+  // }, []);
 
   const handleOrder = useCallback(
     (e) => {
-      // if (!enoughBalance && currency === "") {
-      //   setAlert(true);
-      //   return;
-      // }
-
+      if (!enoughBalance) {
+        setAlert(true);
+        return;
+      }
       setModal(true);
     },
-    [currency, enoughBalance]
+    [enoughBalance]
   );
 
   const handleSubmit = async (e) => {
     setModal(false);
-
     const popupCenter = ({ url, title, w, h }) => {
       // Fixes dual-screen position                             Most browsers      Firefox
       const dualScreenLeft =
@@ -82,7 +86,7 @@ const CartPage = () => {
         setError("Not Enough Balance");
         router.push("/user/deposit");
       }
-    } else if (!enoughBalance) {
+    } else if (enoughBalance) {
       orderWindow = popupCenter({
         url: "",
         title: "Submit order",
@@ -98,7 +102,6 @@ const CartPage = () => {
         profile.UserSessionId,
         status.draws,
         status.lines,
-        currency,
         status.typeId,
         false,
         true,
@@ -153,40 +156,39 @@ const CartPage = () => {
       setError(error);
     }
   };
-
   const disabled = !status?.price || !status?.typeId;
-  console.log("disabled = ", disabled);
-  console.log(modal);
+
   return (
     <Layout>
       <main>
         <ModalDialog
           show={modal}
-          header={"Confirm"}
-          body={"Do you want to submit your order?"}
+          header={"Success"}
+          body={"Your products were successfully purchased."}
           footer={
-            <>
-              <button
-                onClick={() => setModal(false)}
-                className="btn btn-secondary"
-              >
-                No
-              </button>
-              <button onClick={handleSubmit} className="btn btn-primary">
-                {" "}
-                YES{" "}
-              </button>
-            </>
+            <button onClick={handleSubmit} className="btn btn-primary">
+              OK
+            </button>
           }
         />
         <ModalDialog
           show={alert}
           header={"Warning"}
-          body={"Please select your coin"}
+          body={
+            "You do not have enough money in your balance.  Please deposit more money or choose cheaper products."
+          }
           footer={
-            <button onClick={() => setAlert(false)} className="btn btn-primary">
-              OK
-            </button>
+            <>
+              <button
+                onClick={() => setAlert(false)}
+                className="btn btn-primary"
+              >
+                OK
+              </button>
+              <Link href="/user/deposit">
+                <button className="btn btn-success">DEPOSIT</button>
+              </Link>
+            </>
           }
         />
         <div className="bg-inner mt-b-20">

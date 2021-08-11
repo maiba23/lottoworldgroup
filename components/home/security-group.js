@@ -1,7 +1,7 @@
 const SecurityGroup = () => (
   <div className="home-new-security-section mt5">
     <div className="security-section-title">
-      <h2>Security on lotto world group</h2>
+      <h2>SECURITY AND SATISFACTION ON QIWI LOTTO</h2>
     </div>
     <div className="security-logos-section">
       <div className="security-logo-new notlast">

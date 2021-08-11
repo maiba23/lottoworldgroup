@@ -18,18 +18,18 @@ const LotteryList = ({ items }) => (
         nav: false,
         loop: true,
       },
-      1000: {
+      1024: {
         items: 3,
         nav: true,
         loop: true,
       },
       1440: {
-        items: 4,
+        items: 3,
         nav: true,
         loop: true,
       },
       1600: {
-        items: 5,
+        items: 4,
         nav: true,
         loop: true,
       },

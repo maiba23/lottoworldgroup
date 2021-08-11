@@ -195,12 +195,17 @@ const DepositPage = () => {
                     ))}
                   </select>
                 </div>
-                <div className="withdrawbtnpart" id="deposit_submit-btn">
+                {/* <div className="withdrawbtnpart" id="deposit_submit-btn">
                   <div className="withdrawbtn" onClick={handleDeposit}>
                     Deposit
                   </div>
-                </div>
+                </div> */}
               </div>
+              <br />
+              <p>
+                This is our BITCOIN wallet address: &nbsp;
+                <strong>19rxWcjug44Xft1T1Ai11ptDZr94wEdRTz</strong>
+              </p>
               <div className="myaccount_detail_error">{error}</div>
             </div>
           </div>

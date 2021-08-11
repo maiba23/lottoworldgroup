@@ -5,6 +5,7 @@ import GroupGame from "../../components/games/group";
 import { getAllDraws } from "../../service/globalinfo";
 import { parseJsonFile } from "../../helpers/json";
 import { numberWithLength } from "../../helpers/number";
+import Link from "next/link";
 
 const GroupLotto = (props) => {
   const router = useRouter();
@@ -72,6 +73,17 @@ const GroupLotto = (props) => {
                   <div className="text">Click continue</div>
                 </div>
               </div>
+              <div className="desktop-ticket-buttons">
+                <Link
+                  href={`/lotteries/${data.LotteryName.replace(
+                    / /g,
+                    ""
+                  ).toLowerCase()}`}
+                  id="person-ticket-button"
+                >
+                  <a className="person-ticket-button">Person ticket</a>
+                </Link>
+              </div>
             </div>
             <div className={`beton-header ${data.LotteryName}`}>
               <div className="beton-header-mobile-section">
@@ -83,11 +95,7 @@ const GroupLotto = (props) => {
                   <span className="lotto-name">{data.LotteryName}</span>
                 </div>
                 <div className="lotto-prize-container">
-                  <h1 className="lotto-prize">
-                    {jackpot}
-                    <br />
-                    Win BTC
-                  </h1>
+                  <h1 className="lotto-prize">{jackpot}</h1>
                 </div>
                 <div className="lotto-timer">
                   <div className="timer-view">

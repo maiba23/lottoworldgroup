@@ -27,18 +27,6 @@ class MyDocument extends Document {
           />
           <link
             rel="stylesheet"
-            href="/styles/owl.theme.default.css"
-            type="text/css"
-            media="all"
-          />
-          <link
-            rel="stylesheet"
-            href="/styles/owl.carousel.custom.css"
-            type="text/css"
-            media="all"
-          />
-          <link
-            rel="stylesheet"
             href="/styles/my-account.css"
             type="text/css"
             media="all"
@@ -75,22 +63,10 @@ class MyDocument extends Document {
           ></link>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
           <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
-          <script type="text/javascript" src="/js/config.js"></script>
         </Head>
         <body className="home">
           <Main />
           <NextScript />
-          <script type="text/javascript" src="/js/angular.min.js"></script>
-          <script
-            type="text/javascript"
-            src="/js/angular-cache.min.js"
-          ></script>
-          <script
-            type="text/javascript"
-            src="/js/angular-resource.min.js"
-          ></script>
-          <script type="text/javascript" src="/js/cart.build.js"></script>
-          <script type="text/javascript" src="/js/cart.js"></script>
           <script type="text/javascript" src="/js/custom.js"></script>
           <script type="text/javascript" src="/js/jquery.countdown.js"></script>
           <script
@@ -101,7 +77,6 @@ class MyDocument extends Document {
             type="text/javascript"
             src="/js/jquery.simplyscroll.js"
           ></script>
-          <script type="text/javascript" src="/js/mainCtrl.js"></script>
           <script type="text/javascript" src="/js/owl.carousel.js"></script>
           <script type="text/javascript" src="/js/parseNumbers.js"></script>
         </body>

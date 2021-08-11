@@ -22,8 +22,13 @@ const LotteryItem = (props) => {
             alignItems: "center",
           }}
         >
-          <img src={image} style={{ width: "100px", height: "100px" }} />
-          <div className="jackpot">{`${unit} ${formatNumber(amount)}`}</div>
+          <div className="jackpot">
+            <span style={{ margin: 0, display: "block" }}>{name}</span>
+            <span
+              style={{ margin: 0, display: "block" }}
+            >{`${unit} ${formatNumber(amount)}`}</span>
+          </div>
+          <img src={image} style={{ width: "100px" }} />
         </div>
         <div className="footer">
           <div className="countdown">
