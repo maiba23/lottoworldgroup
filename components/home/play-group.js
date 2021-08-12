@@ -5,20 +5,13 @@ export const PlayGroup = () => {
   return (
     <div className="play-in-group-section">
       <h1>Playing in a group</h1>
-      <div
-        id="nav-megamillions-group-ticket"
-        className="home-banner-new"
-        style={{ cursor: "pointer" }}
-      >
-        <h2>
-          Playing in a group is <br />
-          more fun and <br />
-          cost less!
-        </h2>
-        <Link href="/group">
-          <a className="banner-buy-btn">Join Now</a>
-        </Link>
-      </div>
+      <Link href="/group">
+        <div
+          id="nav-megamillions-group-ticket"
+          className="home-banner-new"
+          style={{ cursor: "pointer" }}
+        ></div>
+      </Link>
     </div>
   );
 };
