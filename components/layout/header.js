@@ -25,6 +25,12 @@ export default function Header() {
   const dispatch = useDispatch();
   const router = useRouter();
 
+  const handleRefresh = useCallback(() => {
+    if (profile?.MemberId) {
+      dispatch(UserActions.getBalance(profile?.MemberId));
+    }
+  }, [profile?.MemberId]);
+  console.log(balance);
   const handleLogout = useCallback(() => {
     dispatch(UserActions.logout());
     dispatch(AuthActions.clearCredentials());
@@ -98,14 +104,11 @@ export default function Header() {
                     </div>
                     <div className="rsm-account-balance">
                       {balance && (
-                        <>
-                          <span>{`Balance: € ${balance.AccountBalance.toFixed(
-                            2
-                          )}`}</span>
-                          <span>{`Bonus: € ${balance.BonusAmount.toFixed(
-                            2
-                          )}`}</span>
-                        </>
+                        <span>{`Balance: € ${(
+                          balance.AccountBalance +
+                          balance.BonusAmount +
+                          balance.WinningAmount
+                        ).toFixed(2)}`}</span>
                       )}
                     </div>
                   </div>
@@ -115,16 +118,22 @@ export default function Header() {
                     <a>
                       <i className="fa fa-user"></i>
                       {`My Account (ID: ${profile.MemberId})`}
+                      <br />
                     </a>
                   </Link>
                   <Link href="/user/deposit">
                     <a>
-                      <i className="fa fa-money"></i>Deposit
+                      <i className="fa fa-money-bill"></i>Deposit
                     </a>
                   </Link>
                   <Link href="/user/withdraw">
                     <a>
                       <i className="fa fa-credit-card"></i>Withdraw
+                    </a>
+                  </Link>
+                  <Link href="/">
+                    <a onClick={handleRefresh}>
+                      <i className="fa fa-redo"></i>Balance Refresh
                     </a>
                   </Link>
                   <a href="#" onClick={handleLogout}>

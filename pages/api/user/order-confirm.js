@@ -20,6 +20,7 @@ export default async function handler(req, res) {
     numbers,
   } = req.body;
 
+  console.log(req.body);
   try {
     // construct orderData
     let orderData = "EmailCode={emailcode}&productCounter=1";

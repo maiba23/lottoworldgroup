@@ -1,4 +1,4 @@
 export const balanceCheck = (balance, bonus, price, ticketType) => {
-  if (ticketType === "group") return bonus + balance > price;
+  if (ticketType === "group") return balance > price;
   else return balance > price;
 };

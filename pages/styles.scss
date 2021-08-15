@@ -175,7 +175,7 @@ img {
     display: block;
     width: 100%;
     position: fixed;
-    z-index: 3;
+    z-index: 1111;
     background: linear-gradient(180deg, #0169b2 0%, #212529 100%);
 
     & .left_menu {
@@ -347,7 +347,7 @@ img {
     position: absolute;
     left: 0;
     background: $color-darkbg;
-    min-width: 240px;
+    min-width: 245px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 
@@ -2647,6 +2647,7 @@ a.playNowBtn {
   display: none;
 }
 #banner {
+  margin-top: 80px;
   position: relative;
 }
 .phoenix-feather {
@@ -2661,4 +2662,12 @@ a.playNowBtn {
 }
 .lotto-owl-slider {
   margin-top: 25px;
+}
+.btn-secondary {
+  outline: none;
+  border-color: unset;
+  &:hover {
+    border-color: unset;
+    background-color: #ffc822;
+  }
 }

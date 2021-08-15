@@ -1,14 +1,17 @@
 import React, { useState, useCallback } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Layout from "../../components/layout";
 import { ModalDialog } from "../../components/dialog";
 // import { currencies } from "../../helpers/constants";
 import { confirmOrder, confirmOrderFireGame } from "../../service/client/order";
 import { balanceCheck } from "../../helpers/balance";
+import * as UserActions from "../../store/actions/user";
 
 const CartPage = () => {
+  const dispatch = useDispatch();
+
   // const [currency, setCurrency] = useState("");
   const [error, setError] = useState("");
   const status = useSelector((state) => state.game);
@@ -16,6 +19,7 @@ const CartPage = () => {
   const profile = useSelector((state) => state.user.profile);
   const [modal, setModal] = useState(false);
   const [alert, setAlert] = useState(false);
+  const [success, setSuccess] = useState(false);
   const router = useRouter();
   const enoughBalance = balanceCheck(
     balance?.AccountBalance,
@@ -23,11 +27,19 @@ const CartPage = () => {
     status.price,
     status.ticketType
   );
+
   const isBTCPowerPlay = status.name === "BTC Power Play";
   // const handleCurrency = useCallback((e) => {
   //   setCurrency(e.target.value);
   //   setError("");
   // }, []);
+
+  const setPayed = useCallback(() => {
+    setSuccess(true);
+    if (profile?.MemberId) {
+      dispatch(UserActions.getBalance(profile?.MemberId));
+    }
+  }, [profile?.MemberId]);
 
   const handleOrder = useCallback(
     (e) => {
@@ -35,7 +47,7 @@ const CartPage = () => {
         setAlert(true);
         return;
       }
-      setModal(true);
+      handleSubmit();
     },
     [enoughBalance]
   );
@@ -86,7 +98,7 @@ const CartPage = () => {
         setError("Not Enough Balance");
         router.push("/user/deposit");
       }
-    } else if (enoughBalance) {
+    } else if (!enoughBalance) {
       orderWindow = popupCenter({
         url: "",
         title: "Submit order",
@@ -94,7 +106,6 @@ const CartPage = () => {
         h: 700,
       });
     }
-
     try {
       const resp = await confirmApi(
         profile.MemberId,
@@ -102,6 +113,7 @@ const CartPage = () => {
         profile.UserSessionId,
         status.draws,
         status.lines,
+        "",
         status.typeId,
         false,
         true,
@@ -132,7 +144,7 @@ const CartPage = () => {
             const res = JSON.parse(server_message);
 
             if (res.status === "payed") {
-              router.replace("/thankyou");
+              setPayed();
             }
 
             console.log("Message from bitcoin payment server");
@@ -143,11 +155,11 @@ const CartPage = () => {
             setError("Websocket Connection closed");
           };
         } else {
-          router.replace("/thankyou");
+          setPayed();
         }
       } else if (resp.Deposit) {
         orderWindow && orderWindow.close();
-        router.replace("/thankyou");
+        setPayed();
       } else {
         setError(resp.reason);
         orderWindow && orderWindow.close();
@@ -162,11 +174,14 @@ const CartPage = () => {
     <Layout>
       <main>
         <ModalDialog
-          show={modal}
+          show={success}
           header={"Success"}
-          body={"Your products were successfully purchased."}
+          body={"Your products successfully purchased."}
           footer={
-            <button onClick={handleSubmit} className="btn btn-primary">
+            <button
+              onClick={() => router.replace("/")}
+              className="btn btn-secondary"
+            >
               OK
             </button>
           }
@@ -240,24 +255,6 @@ const CartPage = () => {
               </div>
               <div className="cart-actions">
                 <div className="title">CHECKOUT</div>
-                {/* {balance?.AccountBalance > status.price ? null : (
-                  <div className="ticker-select">
-                    <select
-                      id="ticker-select"
-                      value={currency}
-                      onChange={handleCurrency}
-                    >
-                      <option value="" key="">
-                        Select Coin
-                      </option>
-                      {currencies.map((cur) => (
-                        <option value={cur} key={cur}>
-                          {cur}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                )} */}
                 <div className="action">
                   <input
                     type="button"

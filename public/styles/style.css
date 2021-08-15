@@ -40,7 +40,6 @@ a:hover {
 }
 main {
   width: 100%;
-  margin-top: 80px;
 }
 hr {
   background-color: #e1e1e1;
@@ -10390,7 +10389,7 @@ input:focus {
 .play-in-group-section .home-banner-new {
   width: 100%;
   height: 530px;
-  background: url(../images/play-in-group-new.jpg) no-repeat 100% 100%;
+  background: url(../images/play-in-group.jpg) no-repeat 100% 100%;
   background-position: 0px 0px;
 }
 .play-in-group-section .home-banner-new h2 {

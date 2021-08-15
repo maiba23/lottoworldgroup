@@ -62,7 +62,6 @@ class MyDocument extends Document {
             crossOrigin="anonymous"
           ></link>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-          <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
         </Head>
         <body className="home">
           <Main />
@@ -79,6 +78,8 @@ class MyDocument extends Document {
           ></script>
           <script type="text/javascript" src="/js/owl.carousel.js"></script>
           <script type="text/javascript" src="/js/parseNumbers.js"></script>
+          <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+          <script src="trunk/dev/validation.js"></script>
         </body>
       </Html>
     );
