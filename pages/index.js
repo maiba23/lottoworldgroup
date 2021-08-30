@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import Head from "next/head";
 import Link from "next/link";
-// import Hero from "../components/common/hero";
 import Layout from "../components/layout";
 import LotteryList from "../components/common/lottery-list";
 import PlayGroup from "../components/home/play-group";
@@ -16,6 +15,7 @@ import { parseXmlFile } from "../helpers/xml";
 import { parseJsonFile } from "../helpers/json";
 import SecurityGroup from "../components/home/security-group";
 import Banner from "../components/common/banner";
+import * as UserActions from "../store/actions/user";
 
 export default function Home(props) {
   const { banners, lotteries, results } = props;

@@ -2,9 +2,6 @@ import { useCallback, useMemo, useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import HeaderCoin from "../common/header-coin";
-import supported_coins from "../../data/coins.json";
-import { getCoins } from "../../service/client/coin";
 
 import * as UserActions from "../../store/actions/user";
 import * as AuthActions from "../../store/actions/auth";
@@ -15,8 +12,6 @@ import * as AuthActions from "../../store/actions/auth";
 export default function Header() {
   const [nav, setNav] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const [coinVals, setCoinVals] = useState({ BTH: 0, BCH: 0 });
-  const { coins } = supported_coins;
 
   const toggleNav = useCallback(() => setNav(!nav), [nav]);
   const cls = useMemo(() => (nav ? "show-nav clearfix" : "clearfix"), [nav]);
@@ -30,7 +25,6 @@ export default function Header() {
       dispatch(UserActions.getBalance(profile?.MemberId));
     }
   }, [profile?.MemberId]);
-  console.log(balance);
   const handleLogout = useCallback(() => {
     dispatch(UserActions.logout());
     dispatch(AuthActions.clearCredentials());
@@ -38,10 +32,6 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    getCoins().then((data) => {
-      setCoinVals(data);
-    });
-
     setMounted(true);
     jQuery(".contact-us-modal").on("click", function () {
       jQuery("#contact-us-modal").modal({
@@ -119,6 +109,13 @@ export default function Header() {
                       <i className="fa fa-user"></i>
                       {`My Account (ID: ${profile.MemberId})`}
                       <br />
+                      <span>{`Real Money: € ${balance?.AccountBalance.toFixed(
+                        2
+                      )}`}</span>
+                      <br />
+                      <span>{`Bonus Money: € ${balance?.BonusAmount.toFixed(
+                        2
+                      )}`}</span>
                     </a>
                   </Link>
                   <Link href="/user/deposit">
@@ -187,7 +184,19 @@ export default function Header() {
             {profile && mounted ? (
               <>
                 <li>
-                  <Link href="/user/me">{`My Account (ID: ${profile.MemberId})`}</Link>
+                  <Link href="/user/me">
+                    <a>
+                      {`My Account (ID: ${profile.MemberId})`}
+                      <br />
+                      <span>{`Real Money: € ${balance?.AccountBalance.toFixed(
+                        2
+                      )}`}</span>
+                      <br />
+                      <span>{`Bonus Money: € ${balance?.BonusAmount.toFixed(
+                        2
+                      )}`}</span>
+                    </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="#" onClick={handleLogout}>

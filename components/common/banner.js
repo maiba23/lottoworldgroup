@@ -41,11 +41,6 @@ const Banner = ({ banners, lottery }) => {
               <span className="l-stageTemplate-banner-jackpot-amount">
                 <strong> {formatNumber(lottery.amount)} </strong>
               </span>
-              {/* <span className="l-stageTemplate-banner-jackpot-million">
-                  <span className="l-stageTemplate-banner-jackpot-translation">
-                    Million
-                  </span>
-                </span> */}
             </div>
             <div className="l-stageTemplate-banner-ctaWrapper">
               <span className="l-stageTemplate-banner-ctaWrapper-pitch">

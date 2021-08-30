@@ -168,7 +168,7 @@ const SignupPage = () => {
             onChange={handlePasswordChange}
             placeholder="Password"
             style={{ padding: "16px 24px" }}
-            error={email.error}
+            error={password.error}
           />
           <Input
             id="phone"

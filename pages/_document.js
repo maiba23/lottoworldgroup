@@ -78,8 +78,6 @@ class MyDocument extends Document {
           ></script>
           <script type="text/javascript" src="/js/owl.carousel.js"></script>
           <script type="text/javascript" src="/js/parseNumbers.js"></script>
-          <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
-          <script src="trunk/dev/validation.js"></script>
         </body>
       </Html>
     );

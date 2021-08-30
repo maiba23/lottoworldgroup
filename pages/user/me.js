@@ -16,7 +16,7 @@ const tabs = [
   { title: "Products", class: "products" },
 ];
 
-const MyAccount = ({ countries }) => {
+const MyAccount = ({ countries, groupLines }) => {
   const [tab, setTab] = useState(0);
   const balance = useSelector((state) => state.user.balance);
   const transactions = useSelector((state) => state.user.transactions);
@@ -116,6 +116,7 @@ const MyAccount = ({ countries }) => {
                     ]}
                     values={tickets}
                     action={UserActions.getTickets}
+                    groupLines={groupLines}
                     component={TicketsTable}
                   />
                 )}
@@ -133,6 +134,7 @@ const MyAccount = ({ countries }) => {
                     ]}
                     values={products}
                     action={UserActions.getProducts}
+                    groupLines={groupLines}
                     component={ProductsTable}
                   />
                 )}
@@ -147,9 +149,12 @@ const MyAccount = ({ countries }) => {
 
 export const getStaticProps = async (ctx) => {
   const countries = await parseJsonFile("data/countries.json");
+  const groupLines = await parseJsonFile("data/grouplines.json");
+
   return {
     props: {
       countries,
+      groupLines: groupLines,
     },
   };
 };

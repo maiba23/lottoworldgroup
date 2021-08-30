@@ -1,14 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { formatDate } from "../../helpers/dateformat";
 import { selected_row_load } from "../../helpers/pickio";
+import FsLightbox from "fslightbox-react";
+import TicketLine from "../ticket/line";
+import { generateArray } from "../../helpers/array";
 
-const TicketsTable = ({ headers, values, style }) => {
+const TicketsTable = ({ headers, values, style, groupLines }) => {
   const [shows, setShows] = React.useState([]);
-
+  const [toggler, setToggler] = useState(false);
+  const tens = generateArray(0, 9);
+  const fours = generateArray(0, 4);
   useEffect(() => {
     setShows(values.map(() => false));
   }, [values]);
-
   const selectedRow = React.useCallback((numbers) => {
     const rows = selected_row_load(numbers);
     return (
@@ -30,9 +34,10 @@ const TicketsTable = ({ headers, values, style }) => {
   const selectedNumbers = React.useCallback((sels) => {
     return (
       <div>
-        {Object.values(sels).map((numbers, index) => (
-          <React.Fragment key={index}>{selectedRow(numbers)}</React.Fragment>
-        ))}
+        {sels &&
+          Object.values(sels).map((numbers, index) => (
+            <React.Fragment key={index}>{selectedRow(numbers)}</React.Fragment>
+          ))}
       </div>
     );
   }, []);
@@ -41,7 +46,6 @@ const TicketsTable = ({ headers, values, style }) => {
     shows[idx] = !shows[idx];
     setShows([...shows]);
   }, []);
-
   return (
     <div className="w-100" className="tickets-table">
       <table cellSpacing="1" cellPadding="0" style={style}>
@@ -72,7 +76,7 @@ const TicketsTable = ({ headers, values, style }) => {
                   {value.LotteryName}
                 </td>
                 <td align="center" valign="middle">
-                  {"Personal"}
+                  {value.SingleLines?.SelectedNumbers ? "Personal" : "Group"}
                 </td>
                 <td align="center" valign="middle">
                   {formatDate(new Date(value.DrawDate))}
@@ -93,34 +97,64 @@ const TicketsTable = ({ headers, values, style }) => {
               </tr>
             </tbody>
           </table>
-          <table className={shows[index] ? "contents" : "hidden"}>
-            <thead>
-              <tr>
-                <th>Personal</th>
-                <th>Selected Numbers</th>
-                <th>Draw Results</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td align="center" valign="middle">
-                  {!!value.ScanImageUrls.length && (
-                    <a href={value.ScanImageUrls[1]} target="_blank">
-                      <img src="/images/ticket_scan.png" />
-                    </a>
-                  )}
-                </td>
-                <td className="selected-numbers">
-                  {selectedNumbers(value.SingleLines.SelectedNumbers)}
-                </td>
-                <td className="selected-numbers">
-                  {value.WinningResult
-                    ? selectedRow(value.WinningResult + value.BonusNumber)
-                    : ""}
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div className={shows[index] ? "contents" : "hidden"}>
+            <table>
+              <thead>
+                <tr>
+                  <th>Personal</th>
+                  <th>Selected Numbers</th>
+                  <th>Draw Results</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td align="center" valign="middle">
+                    {!!value.ScanImageUrls.length && (
+                      <>
+                        <img
+                          src="/images/ticket_scan.png"
+                          onClick={() => setToggler((prev) => !prev)}
+                        />
+                        <FsLightbox
+                          toggler={toggler}
+                          type="image"
+                          sources={value.ScanImageUrls}
+                        />
+                      </>
+                    )}
+                  </td>
+                  <td className="selected-numbers">
+                    {selectedNumbers(value.SingleLines?.SelectedNumbers)}
+                  </td>
+                  <td className="selected-numbers">
+                    {value.WinningResult
+                      ? selectedRow(value.WinningResult + value.BonusNumber)
+                      : ""}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            {!value.SingleLines && (
+              <section className="active group-lines">
+                <div className="lines-box">
+                  {fours.map((col) => (
+                    <div className="ten-lines-box" key={col}>
+                      {tens.map((row) => (
+                        <TicketLine
+                          numbers={
+                            groupLines[value.LotteryName.toLowerCase()][
+                              col * 10 + row
+                            ]
+                          }
+                          key={col * 10 + row}
+                        />
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+          </div>
         </div>
       ))}
     </div>

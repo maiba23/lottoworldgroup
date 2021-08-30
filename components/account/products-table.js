@@ -1,9 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { selected_row_load } from "../../helpers/pickio";
+import TicketLine from "../ticket/line";
+import { generateArray } from "../../helpers/array";
 
-const ProductsTable = ({ headers, values, style }) => {
+const ProductsTable = ({ headers, values, style, groupLines }) => {
   const [shows, setShows] = React.useState([]);
-
+  const tens = generateArray(0, 9);
+  const fours = generateArray(0, 4);
   useEffect(() => {
     setShows(values.map(() => false));
   }, [values]);
@@ -11,18 +14,24 @@ const ProductsTable = ({ headers, values, style }) => {
   const selectedRow = React.useCallback((numbers) => {
     const rows = selected_row_load(numbers);
     return (
-      <ul style={{ display: "flex" }}>
-        {rows[0].map((num, idx) => (
-          <li key={idx} className="result_ellipse_blue">
-            {num}
-          </li>
-        ))}
-        {rows[1].map((num, idx) => (
-          <li key={`green-${idx}`} className="result_ellipse_green">
-            {num}
-          </li>
-        ))}
-      </ul>
+      <>
+        <ul style={{ display: "flex" }}>
+          {rows[0].map((num, idx) =>
+            num === "" ? (
+              ""
+            ) : (
+              <li key={idx} className="result_ellipse_blue">
+                {num}
+              </li>
+            )
+          )}
+          {rows[1].map((num, idx) => (
+            <li key={`green-${idx}`} className="result_ellipse_green">
+              {num}
+            </li>
+          ))}
+        </ul>
+      </>
     );
   }, []);
 
@@ -93,6 +102,26 @@ const ProductsTable = ({ headers, values, style }) => {
               <span style={{ fontWeight: "bold" }}>{value.MainLottery}</span>
               <div>{selectedNumbers(value.Lotteries)}</div>
             </div>
+            {value.Product === "Group" && (
+              <section className="active group-lines">
+                <div className="lines-box">
+                  {fours.map((col) => (
+                    <div className="ten-lines-box" key={col}>
+                      {tens.map((row) => (
+                        <TicketLine
+                          numbers={
+                            groupLines[value.MainLottery.toLowerCase()][
+                              col * 10 + row
+                            ]
+                          }
+                          key={col * 10 + row}
+                        />
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
             <div>Lines Left: {value.LinesLeft}</div>
           </div>
         </div>

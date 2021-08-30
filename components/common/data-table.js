@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Table from "../form/table";
 
 const DataTable = (props) => {
-  const { headers, action, values, keys, style, component } = props;
+  const { headers, action, values, keys, style, component, groupLines } = props;
   const [page, setPage] = useState(1);
   const [busy, setBusy] = useState(false);
   const dispatch = useDispatch();
@@ -39,6 +39,7 @@ const DataTable = (props) => {
         <DataViewer
           headers={headers}
           values={values}
+          groupLines={groupLines}
           keys={keys}
           style={style}
         />
